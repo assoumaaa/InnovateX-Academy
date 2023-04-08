@@ -1,10 +1,15 @@
-import '../sass/Reset.scss'
+import { Navbar } from './Navbar';
+
 
 function App() {
   return (
     <div className="App">
-      <p> InnovateX Academy </p>
+      <Navbar />
+      <div className="sections">
+      </div>
     </div>
   );
 }
 export default App;
+
+
