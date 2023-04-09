@@ -16,7 +16,7 @@ export const Navbar = () => {
 
             <div className="right">
                 <div className="bar-items">
-                    <a href='#aboutMe'>
+                    <a href='#aboutUs'>
                         About Us
                     </a>
                 </div>

@@ -1,0 +1,62 @@
+.product {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120vh;
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5rem;
+        width: 70%;
+
+
+        .info_wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            .title {
+                font-size: 3rem;
+            }
+
+            .information {
+                width: 70%;
+                line-height: 2rem;
+                font-size: 1.4rem;
+                font-weight: 300;
+                letter-spacing: 1px;
+            }
+        }
+
+        .our_product {
+            display: flex;
+
+            .each_feature {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                width: 80%;
+
+                img {
+                    width: 15rem;
+                    height: 20rem;
+                    border-radius: 15%;
+                    border: 2px solid black;
+                }
+
+                .title {
+                    font-size: 2rem;
+                }
+
+                .information {
+                    font-size: 1.3rem;
+                    width: 80%;
+                    font-weight: 300;
+                    line-height: 2rem;
+                }
+            }
+        }
+    }
+}
