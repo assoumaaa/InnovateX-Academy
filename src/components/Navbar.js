@@ -41,7 +41,6 @@ export const Navbar = () => {
                         <button>Get Started</button>
                     </a>
                 </div>
-
             </div>
         </div>
     )

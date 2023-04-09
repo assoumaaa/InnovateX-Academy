@@ -7,6 +7,7 @@
     padding: 3rem;
     width: 100%;
     transition: all 0.5s ease;
+    height: 18vh;
 
 
 
@@ -51,13 +52,12 @@
 
             button {
                 transition: all 1s ease;
-                padding: .5rem;
+                padding: 1rem;
                 font-size: 1rem;
                 font-weight: bold;
                 border-radius: 10px;
                 background-color: $main_y;
                 border: 2px solid black;
-
             }
 
             &:hover {
