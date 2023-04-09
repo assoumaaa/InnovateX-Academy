@@ -1,11 +1,15 @@
+import { AboutUs } from './AboutUs';
+import { LandingPage } from './LandingPage';
 import { Navbar } from './Navbar';
 
 
 function App() {
   return (
-    <div className="App">
+    <div className='app'>
       <Navbar />
       <div className="sections">
+        <LandingPage />
+        <AboutUs />
       </div>
     </div>
   );
