@@ -1,9 +1,18 @@
 import React from 'react'
 import '../sass/LandingPage.scss'
 import Typewriter from 'typewriter-effect';
+import { useNavigate } from 'react-router-dom';
+
 
 
 export const LandingPage = () => {
+
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate('/modules')
+    }
+
+
     return (
         <div className="landingPage">
             <div className="left">
@@ -23,7 +32,7 @@ export const LandingPage = () => {
                     </div>
                 </div>
                 <div className="icons">
-                    <button> Get Started </button>
+                    <button onClick={handleClick}> Get Started </button>
                 </div>
             </div>
             <div className="right">

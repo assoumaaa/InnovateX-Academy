@@ -2,9 +2,18 @@
 import React from 'react'
 import '../sass/Navbar.scss'
 import { CiUser } from "react-icons/ci";
+import { useNavigate } from 'react-router-dom';
+
 
 
 export const Navbar = () => {
+
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate('/modules')
+    }
+
+
     return (
         <div className='navbar'>
             <div className="title">
@@ -41,7 +50,7 @@ export const Navbar = () => {
 
                 <div className="bar-items">
                     <a href='#contactMe'>
-                        <button>Get Started</button>
+                        <button onClick={handleClick}>Get Started</button>
                     </a>
                 </div>
             </div>

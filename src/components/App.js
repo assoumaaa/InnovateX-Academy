@@ -1,21 +1,34 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AboutUs } from './AboutUs';
 import { Footer } from './Footer';
 import { LandingPage } from './LandingPage';
 import { Navbar } from './Navbar';
 import { Product } from './Product';
+import { Modules } from './Modules';
 import '../sass/App.scss'
 
 
 function App() {
   return (
     <div className='app'>
-      <Navbar />
-      <div className="sections">
-        <LandingPage />
-        <AboutUs />
-        <Product />
-        <Footer />
-      </div>
+      <BrowserRouter>
+
+        <div className="sections">
+          <Routes>
+            <Route path='/' element={
+              <>
+                <Navbar />
+                <LandingPage />
+                <AboutUs />
+                <Product />
+                <Footer />
+              </>
+            } />
+            <Route path='/modules' element={<Modules />} />
+          </Routes>
+        </div>
+        
+      </BrowserRouter>
     </div>
   );
 }
