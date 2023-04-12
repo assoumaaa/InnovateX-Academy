@@ -15,19 +15,30 @@
 
         .name_slogan {
             display: flex;
-            flex-direction: column;
+            align-items: center;
             font-size: 1.5rem;
+            gap: .6rem;
 
-
-            .name {
-                font-weight: bold;
+            img {
+                width: 3rem;
+                height: 3rem;
             }
 
-            .slogan {
-                font-weight: 300;
+            .names {
+                display: flex;
+                flex-direction: column;
+
+                .name {
+                    font-weight: bold;
+                }
+
+                .slogan {
+                    font-weight: 300;
+                }
             }
         }
     }
+
 
     .right {
         display: flex;

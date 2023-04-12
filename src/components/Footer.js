@@ -7,8 +7,11 @@ export const Footer = () => {
             <div className="wrapper">
 
                 <div className="name_slogan">
-                    <span clßassName='name'>InnovateX Academy</span>
-                    <span className='slogan'>Innovate. Empower. Succeed.</span>
+                    <img src='../../images/logo.png' alt='logo' />
+                    <div className="names">
+                        <span clßassName='name'>InnovateX Academy</span>
+                        <span className='slogan'>Innovate. Empower. Succeed.</span>
+                    </div>
                 </div>
 
                 <div className="information_wrapper">
