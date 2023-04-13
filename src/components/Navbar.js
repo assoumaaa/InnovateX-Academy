@@ -9,8 +9,12 @@ import { useNavigate } from 'react-router-dom';
 export const Navbar = () => {
 
     const navigate = useNavigate();
-    const handleClick = () => {
+    const handleModules = () => {
         navigate('/modules')
+    }
+
+    const handleLogin = () => {
+        navigate('/login')
     }
 
 
@@ -43,14 +47,14 @@ export const Navbar = () => {
                     </a>
                 </div>
                 <div className="bar-items">
-                    <a href='#contactMe'>
-                        <CiUser className='profile' />
+                    <a>
+                        <CiUser className='profile' onClick={handleLogin}/>
                     </a>
                 </div>
 
                 <div className="bar-items">
-                    <a href='#contactMe'>
-                        <button onClick={handleClick}>Get Started</button>
+                    <a>
+                        <button onClick={handleModules}>Get Started</button>
                     </a>
                 </div>
             </div>
