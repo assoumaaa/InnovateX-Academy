@@ -7,6 +7,8 @@ import { Product } from './Product';
 import { Modules } from './Modules';
 import { LoginSignUp } from './LoginSignUp';
 import '../sass/App.scss'
+import { M0 } from '../modules/M0';
+import { M1 } from '../modules/M1';
 
 
 function App() {
@@ -25,11 +27,28 @@ function App() {
                 <Footer />
               </>
             } />
-            <Route path='/modules' element={<Modules />} />
-            <Route path='/login' element={<LoginSignUp />} />
           </Routes>
+
+          <Routes>
+            <Route path='login' element={<LoginSignUp />} />  
+            <Route path="/modules" element={<Modules />} />
+            <Route path="/modules/m0" element={
+              <>
+                <Modules />
+                <M0 />
+              </>
+            } />
+            <Route path="/modules/m1" element={
+              <>
+                <Modules />
+                <M1 />
+              </>
+            } />
+
+          </Routes>
+
         </div>
-        
+
       </BrowserRouter>
     </div>
   );

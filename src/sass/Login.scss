@@ -108,15 +108,16 @@
                         border: 2px solid black;
 
 
-                        &:hover{
+                        &:hover {
                             background-color: $main_y;
                             color: $main_b;
                         }
                     }
 
-                    span{
+                    span {
                         font-weight: 300;
-                        a{
+
+                        a {
                             font-weight: bold;
                             color: $main_y;
                             cursor: pointer;
@@ -144,15 +145,18 @@
         flex: 0.45;
         height: 100vh;
         gap: 1rem;
-        background-image: linear-gradient(to right top, #f4c1e0, #ffb3c9, #ffaa9d, #ffaf65, #ffc022);
         border-top-right-radius: 20px;
         border-bottom-right-radius: 20px;
-        box-shadow: rgba(0, 0, 0, 1) 0px 3px 8px;        
+        box-shadow: rgba(0, 0, 0, 1) 0px 3px 8px;
+        background-color: $main_y;
 
         .slogan {
             font-size: 3rem;
             color: $main_b;
-            font-weight: 400;
+            font-weight: bold;
+            font-style: italic;
+            color: $main_b;
+
         }
 
         img {
@@ -160,7 +164,7 @@
             height: 75%;
             border-radius: 40px;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-            
+
         }
     }
 
