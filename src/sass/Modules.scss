@@ -1,0 +1,92 @@
+@import "../sass/Global.scss";
+
+
+.modules {
+    display: flex;
+    height: 100%;
+    
+    
+
+
+    .sideBar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+
+        width: 14%;
+        gap: 1rem;
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            width: 100%;
+
+            img {
+                width: 3rem;
+                height: 3rem;
+                cursor: pointer;
+            }
+
+            span {
+                font-size: 1rem;
+                font-weight: bold;
+                color: $main_b;
+            }
+        }
+
+
+        .modules {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            a {
+                font-size: 1rem;
+                font-weight: 500;
+                color: rgb(200, 195, 195);
+                cursor: pointer;
+                text-decoration: none;
+            }
+
+            .eachModule {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                gap: .5rem;
+
+                height: 6rem;
+                padding: 2rem;
+
+
+                h1{
+                    color: gray;
+                    font-weight: 300;
+                }
+
+                span{
+                    font-size: 1rem;
+                    font-weight: 700;
+                }
+
+                &.selected {
+                    background-color: $main_y;
+                    h1{
+                        color: $main_b;
+                    }
+
+                    span{
+                        color: $main_b;
+                    }
+                }
+            }
+        }
+    }
+}
