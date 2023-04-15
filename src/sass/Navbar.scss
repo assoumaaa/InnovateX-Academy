@@ -86,26 +86,3 @@
 }
 
 
-@media screen and (max-width : 800px) {
-    .right .hamburger {
-        width: 3.2rem;
-        height: 2.4rem;
-    }
-
-    .left {
-        h1 {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            span {
-                font-size: 3rem;
-            }
-        }
-
-
-        .bar-items {
-            display: none;
-        }
-    }
-}

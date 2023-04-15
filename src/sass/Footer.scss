@@ -6,6 +6,7 @@
     justify-content: center;
     background-color: $main_y;
     height: 50vh;
+    
 
     .wrapper {
         display: flex;
@@ -39,7 +40,7 @@
 
         .information_wrapper {
             display: flex;
-            gap: 2rem;
+            gap: 8rem;
 
             .details {
                 display: flex;
