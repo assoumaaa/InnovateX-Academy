@@ -6,16 +6,17 @@
     height: 100%;
     
     
+    
 
 
     .sideBar {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
+
         position: absolute;
 
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        background-color: $main_w;
 
 
         width: 14%;
@@ -29,8 +30,8 @@
             width: 100%;
 
             img {
-                width: 3rem;
-                height: 3rem;
+                width: 5rem;
+                height: 5rem;
                 cursor: pointer;
             }
 
@@ -57,33 +58,39 @@
 
             .eachModule {
                 display: flex;
-                align-items: center;
-                justify-content: center;
                 flex-direction: column;
+                justify-content: center;
                 gap: .5rem;
 
                 height: 6rem;
                 padding: 2rem;
+                border-bottom: 1px solid rgb(209, 201, 201);
+                
 
 
-                h1{
-                    color: gray;
-                    font-weight: 300;
-                }
 
                 span{
+                    color: rgb(220, 220, 220);
+                    font-weight: 400;
+                }
+
+                h1{
                     font-size: 1rem;
                     font-weight: 700;
+                    color: rgb(220, 220, 220);
+
                 }
 
                 &.selected {
                     background-color: $main_y;
                     h1{
                         color: $main_b;
+                        font-size: 1.3rem;
                     }
 
                     span{
                         color: $main_b;
+                        font-size: 1.3rem;
                     }
                 }
             }
