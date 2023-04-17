@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { BsArrowLeft } from "react-icons/bs";
 
 
-const Login = ({setSignUp}) => {
+export const Login = ({setSignUp}) => {
 
     const navigate = useNavigate();
     const handleBack = () => {
@@ -43,4 +43,3 @@ const Login = ({setSignUp}) => {
     )
 }
 
-export default Login
