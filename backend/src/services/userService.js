@@ -1,11 +1,12 @@
-import  { UsersCollection } from "../configs/db.config"
-import { User } from "../models/user"
+const UsersCollection = require("../configs/db.config")
+const User =  require("../models/user")
+const express = require("express")
 
 
-export default class UserService {
+class UserService { 
 
     async newUser(user) {
-        return await UsersCollection.add({ user });
+        return await UsersCollection.add(user);
     }
 
     async getUser(userId) {
@@ -24,3 +25,5 @@ export default class UserService {
         return this.repository().createQueryBuilder().delete().from(UsersCollection).where("id = :id", { userId })
     }
 }
+
+module.exports = UserService
