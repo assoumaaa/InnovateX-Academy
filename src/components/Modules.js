@@ -19,6 +19,8 @@ export const Modules = () => {
   useEffect(() => {
     const currentPath = window.location.pathname;
     const selectedIndex = hrefs.findIndex(href => href === currentPath);
+    const userID = window.localStorage.getItem("userID")
+    console.log(userID)
     setSelectedIndex(selectedIndex);
   }, [hrefs]);
 

@@ -1,8 +1,13 @@
-import firebase from 'firebase';
+
 import React, { useState } from 'react'
 import '../sass/Login.scss'
 import { useNavigate } from 'react-router-dom';
 import { BsArrowLeft } from "react-icons/bs";
+
+
+import firebase from 'firebase/compat/app';
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import 'firebase/compat/firestore';
 
 
 
@@ -16,14 +21,15 @@ const firebaseConfig = {
     messagingSenderId: "403985743454",
     appId: "1:403985743454:web:895ee060dd9adc84a03ecf",
     measurementId: "G-4YYN3W3PWV"
-  };
+};
 
 // Initialize Firebase app
 firebase.initializeApp(firebaseConfig);
 
 
-const Login = ({setSignUp}) => {
+const Login = ({ setSignUp }) => {
 
+    const auth = getAuth();
     const navigate = useNavigate();
     const handleBack = () => {
         navigate('/')
@@ -31,22 +37,21 @@ const Login = ({setSignUp}) => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
+    
 
     const handleLogin = async (e) => {
         e.preventDefault();
-        try {
-            await firebase.auth().signInWithEmailAndPassword(email, password);
-            const loggedUser = firebase.auth().user;
-            if (loggedUser) {
-                const token = await loggedUser.getIdToken();
-                console.log('Token:', token);
-             } else {
-                setError('Failed to get user data.');
-            }   
-        } catch (error) {
-            setError(error.message);
-        }
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                const userID = userCredential.user.uid;
+                window.localStorage.setItem("userID",userID);
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorMessage);
+            });
     }
 
     const handleSignUp = () => {
