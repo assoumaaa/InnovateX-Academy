@@ -9,12 +9,7 @@ export const Modules = () => {
   const modules_names = ["Design Thinking", "Six Thinking Hats", "Selection", "Persona", "Jobs To Be Done", "Value Proposition", "POV", "Ideation", "Prototype", "Module 9", "Module 10", "Module 11", "Module 12", "Module 13", "Module 14"];
   const hrefs = ['/modules/m0', '/modules/m1', '/modules/m2', '/modules/m3', '/modules/m4', '/modules/m5', '/modules/m6', '/modules/m7', '/modules/m8', '/modules/m9', '/modules/m10', '/modules/m11', '/modules/m12', '/modules/m13', '/modules/m14']
   
-  
-
   const navigate = useNavigate();
-  const handleBack = () => {
-    navigate('/')
-  }
 
   useEffect(() => {
     const currentPath = window.location.pathname;
@@ -29,7 +24,7 @@ export const Modules = () => {
       <div className="sideBar">
 
         <div className="logo">
-          <img src='../../images/logo.png' alt='logo' onClick={handleBack} />
+          <img src='../../images/logo.png' alt='logo' onClick={() => navigate('/')} />
           <span>InnovateX Academy</span>
         </div>
 
