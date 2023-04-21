@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../sass/Navbar.scss'
 import { CiUser } from "react-icons/ci";
 import { useNavigate } from 'react-router-dom';
@@ -9,13 +9,23 @@ import { useNavigate } from 'react-router-dom';
 export const Navbar = () => {
 
     const navigate = useNavigate();
+    const [userID, setUserID] = useState()
+
     const handleModules = () => {
-        navigate('/modules')
+        console.log(userID)
+        if (userID) navigate('/modules')
+        else navigate('/login')
     }
 
-    const handleLogin = () => {
-        navigate('/login')
+    const handleLogout = () => {
+        window.localStorage.removeItem('userID')
+        setUserID()
     }
+
+    useEffect(() => {
+        if (!userID)
+            setUserID(window.localStorage.getItem('userID'))
+    }, [])
 
 
     return (
@@ -47,9 +57,13 @@ export const Navbar = () => {
                     </a>
                 </div>
                 <div className="bar-items">
-                    <a>
-                        <CiUser className='profile' onClick={handleLogin}/>
-                    </a>
+                    {!userID ?
+                        (<a onClick={() => navigate('/login')}>
+                            Login
+                        </a>) :
+                        (
+                            <a onClick={handleLogout}> Logout </a>
+                        )}
                 </div>
 
                 <div className="bar-items">

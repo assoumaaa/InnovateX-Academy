@@ -14,33 +14,24 @@ export const SignUp = ({ setSignUp }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleBack = () => {
-        navigate('/')
-    }
-
-
+ 
     const handleSignUp = async (e) => {
         e.preventDefault();
         createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {  
+            .then((userCredential) => {
                 console.log("I JUST REGISTERED A USER!!!!!")
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                console.log(errorCode + errorMessage)                
+                console.log(errorCode + errorMessage)
             });
     }
-
-    const handleLogin = () => {
-        setSignUp(false)
-    }
-
 
 
     return (
         <div className="right">
-            <BsArrowLeft className='back' onClick={handleBack} />
+            <BsArrowLeft className='back' onClick={() => navigate('/')} />
             <div className="name_slogan">
                 <img src='../../images/logo.png' alt='logo' />
                 <span>Register to InnovateX Academy</span>
@@ -49,7 +40,7 @@ export const SignUp = ({ setSignUp }) => {
                 <form>
                     <div className="form-group">
                         <label htmlFor="email">Full Name</label>
-                        <input type="text" className="form-control"  placeholder="Full Name" />
+                        <input type="text" className="form-control" placeholder="Full Name" />
                     </div>
                     <div className="form-group">
                         <label htmlFor="email">Email address</label>
@@ -61,7 +52,7 @@ export const SignUp = ({ setSignUp }) => {
                     </div>
                     <div className="button">
                         <button type="submit" className="btn btn-primary" onClick={handleSignUp}>Sign Up</button>
-                        <span>Already have an account? <a onClick={handleLogin}>Login</a></span>
+                        <span>Already have an account? <a onClick={() => setSignUp(false)}>Login</a></span>
                     </div>
                 </form>
             </div>

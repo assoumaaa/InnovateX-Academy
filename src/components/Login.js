@@ -11,6 +11,8 @@ import 'firebase/compat/firestore';
 
 
 
+
+
 // Your Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyAYvRaNKEe5XGhrSl-rPydEggrC-YXb1wI",
@@ -31,13 +33,9 @@ const Login = ({ setSignUp }) => {
 
     const auth = getAuth();
     const navigate = useNavigate();
-    const handleBack = () => {
-        navigate('/')
-    }
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -45,7 +43,8 @@ const Login = ({ setSignUp }) => {
             .then((userCredential) => {
                 const user = userCredential.user;
                 const userID = userCredential.user.uid;
-                window.localStorage.setItem("userID",userID);
+                window.localStorage.setItem("userID", userID);
+                navigate('/modules');
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -54,14 +53,10 @@ const Login = ({ setSignUp }) => {
             });
     }
 
-    const handleSignUp = () => {
-        setSignUp(true)
-    }
-
 
     return (
         <div className="right">
-            <BsArrowLeft className='back' onClick={handleBack} />
+            <BsArrowLeft className='back' onClick={() => navigate('/')} />
             <div className="name_slogan">
                 <img src='../../images/logo.png' alt='logo' />
                 <span>Sign in to InnovateX Academy</span>
@@ -78,11 +73,11 @@ const Login = ({ setSignUp }) => {
                     </div>
                     <div className="button">
                         <button type="submit" className="btn btn-primary" onClick={handleLogin}>Log In</button>
-                        <span>Don't have an account? <a onClick={handleSignUp}>Sign up</a></span>
+                        <span>Don't have an account? <a onClick={() => setSignUp(true)}>Sign up</a></span>
                     </div>
                 </form>
-            </div>
-        </div>
+            </div >
+        </div >
     )
 }
 
