@@ -5,22 +5,23 @@
     display: flex;
     height: 100%;
     
-    
-    
+
+
+
 
 
     .sideBar {
         display: flex;
         flex-direction: column;
-
         position: absolute;
-
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         background-color: $main_w;
+        border-right: 1px solid rgb(212, 210, 210);
+        background-color: rgb(251, 251, 251);
+        
 
-
-        width: 14%;
+        width: 17%;
         gap: 1rem;
+
         .logo {
             display: flex;
             flex-direction: column;
@@ -28,17 +29,17 @@
             justify-content: center;
             padding: 1rem;
             width: 100%;
+            gap: .5rem;
 
             img {
-                width: 5rem;
-                height: 5rem;
+                width: 4rem;
+                height: 4rem;
                 cursor: pointer;
             }
 
             span {
-                font-size: 1rem;
-                font-weight: bold;
                 color: $main_b;
+                font-weight: bold;
             }
         }
 
@@ -46,51 +47,57 @@
         .modules {
             display: flex;
             flex-direction: column;
-            width: 100%;
+            align-items: center;
+            border-bottom: 1px solid rgb(209, 201, 201);
+            
 
             a {
-                font-size: 1rem;
-                font-weight: 500;
-                color: rgb(200, 195, 195);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: .5rem;
+                
                 cursor: pointer;
                 text-decoration: none;
-            }
-
-            .eachModule {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                gap: .5rem;
-
-                height: 6rem;
-                padding: 2rem;
-                border-bottom: 1px solid rgb(209, 201, 201);
-                
+                border-radius: 20%;
+                width: 70%;
+                height: 7vh;
 
 
-
-                span{
-                    color: rgb(220, 220, 220);
-                    font-weight: 400;
-                }
-
-                h1{
-                    font-size: 1rem;
-                    font-weight: 700;
-                    color: rgb(220, 220, 220);
-
-                }
-
-                &.selected {
-                    background-color: $main_y;
-                    h1{
-                        color: $main_b;
-                        font-size: 1.3rem;
+                .eachModule {
+                    display: flex;
+                    align-items: center;
+                    gap: .5rem;
+                    
+                    transition: all 1.2s ease;
+                    padding-left: 10%;
+                    width: 100%;
+                    
+                    
+                    
+                    .lock{
+                        font-size: 1rem;
+                        color: gray;
+                    }
+                    
+                    h1 {
+                        font-size: .9rem;
+                        font-weight: 400;
+                        color: rgb(174, 174, 174);
                     }
 
-                    span{
-                        color: $main_b;
-                        font-size: 1.3rem;
+                    &.selected {
+                        background-color: $main_y;
+                        border-radius: 12px;
+                        height: 7vh;
+                        
+                        h1 {
+                            color: $main_b;       
+                        }
+
+                        .lock{
+                            display: none;
+                        }
                     }
                 }
             }
