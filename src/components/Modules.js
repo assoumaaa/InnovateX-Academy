@@ -27,7 +27,7 @@ export const Modules = () => {
       <div className="sideBar">
 
         <div className="logo">
-          <img src='../../images/logo.png' alt='logo' onClick={handleBack} />
+          <img src='../../images/logo.png' alt='logo' onClick={() => navigate('/')} />
           <span>InnovateX Academy</span> 
         </div>
 
