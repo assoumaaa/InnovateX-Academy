@@ -1,0 +1,52 @@
+@import "../../Global.scss";
+
+
+.definition {
+    padding: 7rem;
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5rem;
+        
+
+        h1{
+            font-size: 3rem;
+            color: $main_y;
+        }
+
+        span{
+            font-weight: 300;
+            font-size: 1.5rem;
+            line-height: 2.5rem;
+            
+
+            &.note{
+                font-weight: bold;
+            }
+        }
+
+        .next{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: $main_y;
+            border-top-left-radius: 20px;
+            font-size: 4rem;
+            cursor: pointer;
+            
+        }
+
+        .back{
+            position: absolute;
+            bottom: 0;
+            left: 14%;
+            background-color: $main_y;
+            border-top-right-radius: 20px;    
+            font-size: 4rem;
+            cursor: pointer;
+        }
+    }
+
+}
