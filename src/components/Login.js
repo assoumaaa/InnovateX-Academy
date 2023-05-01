@@ -1,32 +1,12 @@
-
 import React, { useState } from 'react'
 import '../sass/Login.scss'
 import { useNavigate } from 'react-router-dom';
 import { BsArrowLeft } from "react-icons/bs";
-
-
 import firebase from 'firebase/compat/app';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import 'firebase/compat/firestore';
 
 
-
-
-
-// Your Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyAYvRaNKEe5XGhrSl-rPydEggrC-YXb1wI",
-    authDomain: "innovate-x-academy.firebaseapp.com",
-    databaseURL: "https://innovate-x-academy-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "innovate-x-academy",
-    storageBucket: "innovate-x-academy.appspot.com",
-    messagingSenderId: "403985743454",
-    appId: "1:403985743454:web:895ee060dd9adc84a03ecf",
-    measurementId: "G-4YYN3W3PWV"
-};
-
-// Initialize Firebase app
-firebase.initializeApp(firebaseConfig);
 
 
 export const Login = ({ setSignUp }) => {

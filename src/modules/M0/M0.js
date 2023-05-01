@@ -10,9 +10,6 @@ import '../../sass/Modules/M0/M0.scss'
 export const M0 = () => {
 
     const [def, SetDef] = useState(false)
-    const handleDef = () => {
-        SetDef(true)
-    }
 
     return (
         <div className="m0">

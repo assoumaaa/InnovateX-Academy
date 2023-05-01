@@ -1,6 +1,4 @@
-
 import React from 'react'
-
 
 
 export const Start = ({ SetDef }) => {
@@ -20,7 +18,7 @@ export const Start = ({ SetDef }) => {
             </div>
 
             <div className="right">
-                <img src='../../images/m0.jpeg' />
+                <img src='../../images/m0.jpeg' alt='image' />
             </div>
         </div>
     )
