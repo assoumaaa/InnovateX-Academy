@@ -81,4 +81,3 @@ const Login = ({ setSignUp }) => {
     )
 }
 
-export default Login
