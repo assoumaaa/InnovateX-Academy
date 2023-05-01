@@ -7,16 +7,18 @@ import { Product } from './Product';
 import { Modules } from './Modules';
 import { LoginSignUp } from './LoginSignUp';
 import '../sass/App.scss'
-import { M0 } from '../modules/M0';
-import { M1 } from '../modules/M1';
+import { M0 } from '../modules/M0/M0'
+import { M1 } from '../modules/M1/M1';
+import { Definition } from '../modules/M0/Definition';
 
 
 function App() {
   return (
     <div className='app'>
       <BrowserRouter>
-
         <div className="sections">
+
+
           <Routes>
             <Route path='/' element={
               <>
@@ -30,25 +32,16 @@ function App() {
           </Routes>
 
           <Routes>
-            <Route path='login' element={<LoginSignUp />} />  
+            <Route path='login' element={<LoginSignUp />} />
             <Route path="/modules" element={<Modules />} />
-            <Route path="/modules/m0" element={
-              <>
-                <Modules />
-                <M0 />
-              </>
-            } />
-            <Route path="/modules/m1" element={
-              <>
-                <Modules />
-                <M1 />
-              </>
-            } />
-
+            <Route path="/modules/m0" element={<M0 />} />
+            <Route path="/modules/m1" element={<M1 />} />
           </Routes>
 
-        </div>
 
+
+
+        </div>
       </BrowserRouter>
     </div>
   );
