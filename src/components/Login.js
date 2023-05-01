@@ -29,7 +29,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 
-const Login = ({ setSignUp }) => {
+export const Login = ({ setSignUp }) => {
 
     const auth = getAuth();
     const navigate = useNavigate();
