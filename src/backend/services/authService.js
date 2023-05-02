@@ -11,7 +11,6 @@ class authService {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const userID = userCredential.user.uid;
       window.localStorage.setItem("userID", userID);
-      console.log(userID);
       return 'OK';
     }
     catch (error) {

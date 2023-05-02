@@ -2,9 +2,7 @@ import React, { useState } from 'react'
 import '../sass/Login.scss'
 import { useNavigate } from 'react-router-dom';
 import { BsArrowLeft } from "react-icons/bs";
-import authService from '../backend/services/authService'
-
-
+import authService from '../backend/services/authService';
 
 
 export const Login = ({ setSignUp }) => {
@@ -30,6 +28,7 @@ export const Login = ({ setSignUp }) => {
 
     return (
         <div className="right">
+            <BsArrowLeft className='back' onClick={() => navigate('/')} />
             <BsArrowLeft className='back' onClick={() => navigate('/')} />
             <div className="name_slogan">
                 <img src='../../images/logo.png' alt='logo' />
