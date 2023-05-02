@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import '../sass/Login.scss'
 import { useNavigate } from 'react-router-dom';
 import { BsArrowLeft } from "react-icons/bs";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import authService from '../backend/services/authService';
+
 
 
 
 export const SignUp = ({ setSignUp }) => {
 
-    const auth = getAuth();
     const navigate = useNavigate();
 
     const [email, setEmail] = useState('');
@@ -17,15 +17,7 @@ export const SignUp = ({ setSignUp }) => {
  
     const handleSignUp = async (e) => {
         e.preventDefault();
-        createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                console.log("I JUST REGISTERED A USER!!!!!")
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.log(errorCode + errorMessage)
-            });
+        authService.signUp(email,password);
     }
 
 

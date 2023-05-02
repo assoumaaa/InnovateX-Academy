@@ -2,36 +2,30 @@ import React, { useState } from 'react'
 import '../sass/Login.scss'
 import { useNavigate } from 'react-router-dom';
 import { BsArrowLeft } from "react-icons/bs";
-import firebase from 'firebase/compat/app';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import 'firebase/compat/firestore';
+import authService from '../backend/services/authService'
 
 
 
 
 export const Login = ({ setSignUp }) => {
 
-    const auth = getAuth();
     const navigate = useNavigate();
-
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    
+
     const handleLogin = async (e) => {
+        
         e.preventDefault();
-        signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                const user = userCredential.user;
-                const userID = userCredential.user.uid;
-                window.localStorage.setItem("userID", userID);
-                navigate('/modules');
+        authService.login(email, password)
+            .then((result) => {
+                if (result === 'OK') {
+                    navigate('/modules')
+                }
             })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.log(errorMessage);
-            });
     }
+
 
 
     return (
