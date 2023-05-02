@@ -2,23 +2,35 @@ import React, { useState } from 'react'
 import '../sass/Login.scss'
 import { useNavigate } from 'react-router-dom';
 import { BsArrowLeft } from "react-icons/bs";
+import authService from '../backend/services/authService';
 
 
 export const Login = ({setSignUp}) => {
 
     const navigate = useNavigate();
-    const handleBack = () => {
-        navigate('/')
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    
+
+    const handleLogin = async (e) => {
+        
+        e.preventDefault();
+        authService.login(email,
+             password)
+            .then((result) => {
+                if (result === 'OK') {
+                    navigate('/modules')
+                }
+            })
     }
 
-    const handleSignUp = () => {
-        setSignUp(true)
-    }
+  
 
 
     return (
         <div className="right">
-            <BsArrowLeft className='back' onClick={handleBack} />
+            <BsArrowLeft className='back' onClick={() => navigate('/')} />
             <div className="name_slogan">
                 <img src='../../images/logo.png' alt='logo' />
                 <span>Sign in to InnovateX Academy</span>
@@ -35,7 +47,7 @@ export const Login = ({setSignUp}) => {
                     </div>
                     <div className="button">
                         <button type="submit" className="btn btn-primary">Log In</button>
-                        <span>Don't have an account? <a onClick={handleSignUp}>Sign up</a></span>
+                        <span>Don't have an account? <a onClick={() => setSignUp(true)}>Sign up</a></span>
                     </div>
                 </form>
             </div>
