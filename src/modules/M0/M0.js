@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { Modules } from '../../components/Modules';
 import { Start } from './Start';
 import { Definition } from './Definition';
-import '../../sass/Modules/M0/M0.scss'
+import { Questions } from './Questions';
+
 
 
 
@@ -10,18 +11,39 @@ import '../../sass/Modules/M0/M0.scss'
 export const M0 = () => {
 
     const [def, SetDef] = useState(false)
+    const [questions, SetQuestions] = useState(false)
 
-    return (
-        <div className="m0">
-            <Modules />
-            {!def ? (
+
+ 
+
+    if (!def) {
+        return (
+            <>
+                <Modules />
                 <Start SetDef={SetDef} />
-            ) : (
-                <Definition SetDef={SetDef} />
-            )}
-        </div>
+            </>
+        );
+    }
 
-    )
+    else if (def && !questions) {
+        return (
+            <>
+                <Modules />
+                <Definition SetDef={SetDef} SetQuestions={SetQuestions} />
+            </>
+        );
+    }
+
+    else if (questions) {
+        return (
+            <>
+                <Modules />
+                <Questions SetQuestions={SetQuestions} />
+            </>
+        );
+    }
 }
 
-//<img src='../images/m0.png'/>
+
+
+
