@@ -5,8 +5,6 @@ import { SignUp } from './SignUp';
 
 
 
-
-
 export const LoginSignUp = () => {
 
     const [signUp, setSignUp] = useState(false)

@@ -19,7 +19,6 @@ export const Modules = () => {
     const currentPath = window.location.pathname;
     const selectedIndex = hrefs.findIndex(href => currentPath.startsWith(href));
     setSelectedIndex(selectedIndex);
-    console.log('inside useEffect' + hrefs.findIndex(href => href === currentPath.startsWith(href)));
   }, [hrefs]);
 
   return (

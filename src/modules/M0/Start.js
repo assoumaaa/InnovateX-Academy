@@ -18,7 +18,7 @@ export const Start = ({ SetDef }) => {
             </div>
 
             <div className="right">
-                <img src='../../images/m0.jpeg' alt='image' />
+                <img src='../../images/m0.jpeg' alt='m0' />
             </div>
         </div>
     )
