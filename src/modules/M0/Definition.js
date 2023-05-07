@@ -5,7 +5,6 @@ import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 
 export const Definition = ({ SetDef, SetQuestions }) => {
 
-
     return (
         <div className="definition">
             <div className="wrapper">
