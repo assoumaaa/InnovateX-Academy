@@ -4,15 +4,44 @@
     padding: $main_padding;
     margin-left: $main_margin;
 
+    
 
 
-    .problem{
+    .problem {
         padding: 2rem;
         background-color: $main_y;
 
-        span{
+        span {
             font-size: 1.5rem;
             font-weight: 300;
+        }
+    }
+
+    .button-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+
+    
+
+        button {
+            padding: 2rem;
+            transition: all 1s ease;
+            padding: 1rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 10px;
+            background-color: $main_b;
+            border: 2px solid black;
+            color: $main_w;
+            width: 30%;
+
+
+            &:hover {
+                background-color: $main_y;
+                color: $main_b;
+            }
         }
     }
 
@@ -29,10 +58,11 @@
                 display: flex;
                 flex-direction: column;
                 padding: 1rem;
+                font-size: 1.2rem;
 
                 border: solid black 1px;
                 background-color: rgb(194, 194, 194);
-                gap: 1rem;
+                gap: .5rem;
             }
 
             textarea {
@@ -44,4 +74,5 @@
             }
         }
     }
+
 }

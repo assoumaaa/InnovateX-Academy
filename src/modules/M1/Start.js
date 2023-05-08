@@ -8,7 +8,7 @@ export const Start = ({ SetImage, SetStart }) => {
             <div className="wrapper">
                 <div className="left">
                     <div className="left-wrapper">
-                        <h1>Thinking Hats - Mind Mapping - Brainstorming</h1>
+                        <h1>Six Thinking Hats - Mind Mapping - Brainstorming</h1>
                         <span>The main objective of this module is learning about different tools that will help us through the process in order to be able to define the persona later on and fix the problem</span>
                         <button onClick={() => {
                             SetImage(true);

@@ -3,6 +3,7 @@ import { Modules } from '../../components/Modules';
 import { Start } from './Start';
 import { Definition } from './Definition';
 import { Questions } from './Questions';
+import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 
 
 
@@ -14,7 +15,7 @@ export const M0 = () => {
     const [questions, SetQuestions] = useState(false)
 
 
- 
+
 
     // START PAGE
     if (!def) {
@@ -30,7 +31,9 @@ export const M0 = () => {
         return (
             <>
                 <Modules />
-                <Definition SetDef={SetDef} SetQuestions={SetQuestions} />
+                <Definition />
+                <BsArrowRight onClick={() => SetQuestions(true)} className='next' />
+                <BsArrowLeft onClick={() => SetDef(false)} className='back' />
             </>
         );
     }
@@ -39,7 +42,8 @@ export const M0 = () => {
         return (
             <>
                 <Modules />
-                <Questions SetQuestions={SetQuestions} />
+                <Questions />
+                <BsArrowLeft onClick={() => SetQuestions(false)} className='back' />
             </>
         );
     }

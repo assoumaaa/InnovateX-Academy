@@ -11,13 +11,15 @@ export const SignUp = ({ setSignUp }) => {
 
     const navigate = useNavigate();
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [fullName, SetFullName] = useState('')
+    const [email, SetEmail] = useState('');
+    const [password, SetPassword] = useState('');
 
- 
+
+
     const handleSignUp = async (e) => {
         e.preventDefault();
-        authService.signUp(email,password);
+        authService.signUp(fullName, email, password);
     }
 
 
@@ -32,15 +34,15 @@ export const SignUp = ({ setSignUp }) => {
                 <form>
                     <div className="form-group">
                         <label htmlFor="email">Full Name</label>
-                        <input type="text" className="form-control" placeholder="Full Name" />
+                        <input type="text" className="form-control" placeholder="Full Name" onChange={(e) => SetFullName(e.target.value)} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="email">Email address</label>
-                        <input type="email" className="form-control" id="email" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                        <input type="email" className="form-control" id="email" placeholder="Enter email" value={email} onChange={(e) => SetEmail(e.target.value)} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="password">Password</label>
-                        <input type="password" className="form-control" id="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <input type="password" className="form-control" id="password" placeholder="Password" value={password} onChange={(e) => SetPassword(e.target.value)} />
                     </div>
                     <div className="button">
                         <button type="submit" className="btn btn-primary" onClick={handleSignUp}>Sign Up</button>
