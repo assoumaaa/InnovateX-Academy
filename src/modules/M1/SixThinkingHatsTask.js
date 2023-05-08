@@ -19,14 +19,13 @@ export const SixThinkingHatsTask = () => {
                     <div className="eachGrid">
                         <h1>FACTS</h1>
                         <span>Analytical and Objective</span>
-
                     </div>
                     <textarea />
                 </div>
                 <div className="grid-item">
                     <div className="eachGrid">
                         <h1>IDEAS</h1>
-                        <span>Analytical and Objective</span>
+                        <span>Creative and Innovative</span>
                     </div>
                     <textarea />
                 </div>
@@ -51,6 +50,9 @@ export const SixThinkingHatsTask = () => {
                     </div>
                     <textarea />
                 </div>
+            </div>
+            <div className="button-div">
+                <button>Submit</button>
             </div>
         </div>
     )

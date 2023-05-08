@@ -7,7 +7,6 @@ export const MindMappingImage = () => {
         <div className="image-container">
             <h1>Quick Insight!</h1>
             <img src='../../images/mindmapping.png' alt='m0' />
-
         </div>
     )
 }

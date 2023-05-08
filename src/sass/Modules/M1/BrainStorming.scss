@@ -1,6 +1,6 @@
 @import "../../Global.scss";
 
-.sixThinkingHats {
+.brainStorming {
     padding: $main_padding;
     margin-left: $main_margin;
 
@@ -8,26 +8,20 @@
     flex-direction: column;
     justify-content: center;
     gap: 4rem;
-    height: 100vh;
+    height: 120vh;
 
 
-    p {
-        font-size: 2rem;
-        font-weight: 300;
-        color: gray;
+    h1{
+        font-size: 4rem;  
     }
 
-    h1 {
-        font-size: 4rem;
-    }
-
-    span {
+    span{
         gap: 1rem;
         font-size: 2rem;
         line-height: 2.5rem;
         font-weight: 400;
 
-        h1 {
+        h1{
             font-size: 3rem;
             color: $main_y;
             display: inline;
