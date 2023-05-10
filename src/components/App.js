@@ -10,6 +10,7 @@ import '../sass/App.scss'
 import { M0 } from '../modules/M0/M0'
 import { M1 } from '../modules/M1/M1';
 import { Definition } from '../modules/M0/Definition';
+import { M2 } from '../modules/M2/M2';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
             <Route path="/modules" element={<Modules />} />
             <Route path="/modules/m0" element={<M0 />} />
             <Route path="/modules/m1" element={<M1 />} />
+            <Route path="/modules/m2" element={<M2 />} />
           </Routes>
 
 

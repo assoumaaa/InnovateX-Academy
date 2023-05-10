@@ -3,7 +3,49 @@
 .review {
     padding: $main_padding;
     margin-left: $main_margin;
-
     
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 
+    h2 {
+        font-size: 3rem;
+        font-weight: 300;
+    }
+
+
+    .wrapper-review {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+
+        .module-review {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+
+            span {
+                font-size: 2rem;
+            }
+
+        }
+    }
+
+    button {
+        transition: all 1s ease;
+        padding: 1rem;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 10px;
+        background-color: $main_b;
+        border: 2px solid black;
+        color: $main_w;
+        width: 30%;
+
+
+        &:hover {
+            background-color: $main_y;
+            color: $main_b;
+        }
+    }
 }

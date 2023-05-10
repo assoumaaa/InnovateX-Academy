@@ -16,13 +16,35 @@ export const Review = () => {
         <div className="review">
             <h2> You have completed the first module and learnt about three different tools that you will use throughout the course
                 Please rate your understanding  of the three tools:</h2>
-            <Rating
-                count={5}
-                onChange={handleRatingChange}
-                size={24}
-                activeColor="#ffd700"
-            />
-
+            <div className="wrapper-review">
+                <div className="module-review">
+                    <span>Six Thinking Hats</span>
+                    <Rating
+                        count={5}
+                        onChange={handleRatingChange}
+                        size={50}
+                        activeColor="#ffd700"
+                    />
+                </div>
+                <div className="module-review">
+                    <span>MindMapping</span>
+                    <Rating
+                        count={5}
+                        onChange={handleRatingChange}
+                        size={50}
+                        activeColor="#ffd700"
+                    />
+                </div>
+                <div className="module-review">
+                    <span>Brain Storming</span>
+                    <Rating
+                        count={5}
+                        size={50}
+                        activeColor="#ffd700"
+                    />
+                </div>
+            </div>
+            <button>Start New Module!</button>
         </div>
     )
 }
