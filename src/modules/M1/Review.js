@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import '../../sass/Modules/M1/Review.scss'
 import Rating from 'react-rating-stars-component';
+import { useNavigate } from 'react-router-dom';
 
 
 
 export const Review = () => {
     const [rating, setRating] = useState(0);
+    const navigate = useNavigate();
 
     const handleRatingChange = (newRating) => {
         setRating(newRating);
@@ -44,7 +46,7 @@ export const Review = () => {
                     />
                 </div>
             </div>
-            <button>Start New Module!</button>
+            <button onClick={() => navigate('/modules/m2')}>Start New Module!</button>
         </div>
     )
 }
