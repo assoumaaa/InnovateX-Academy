@@ -18,7 +18,7 @@ export const Start = ({ SetImage, SetStart }) => {
                 </div>
 
                 <div className="right">
-                    <img src='../../images/m1.jpeg' alt='m0' />
+                    <img src='../../images/m1/m1.jpeg' alt='m0' />
                 </div>
             </div>
         </div>
