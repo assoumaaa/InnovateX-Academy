@@ -55,6 +55,7 @@
                 font-weight: 400;
                 text-decoration: none;
                 color: $main_b;
+                cursor: pointer;
             }
 
             .profile {
@@ -62,13 +63,14 @@
             }
 
             button {
-                transition: all 1s ease;
-                padding: 1rem;
+                transition: all 1s ease;                
                 font-size: 1rem;
                 font-weight: bold;
                 border-radius: 10px;
                 background-color: $main_y;
                 border: 2px solid black;
+                width: 7rem;
+                height: 3.5rem;
             }
 
             &:hover {

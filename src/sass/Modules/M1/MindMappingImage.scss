@@ -1,0 +1,41 @@
+@import "../../Global.scss";
+
+.image-container {
+    padding: $main_padding;
+    margin-left: 17%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 120vh;
+    gap: 2rem;
+
+    h1 {
+        font-weight: 300;
+        font-size: 3rem;
+    }
+
+    img {
+        height: 100%;
+        width: 100%;
+        border-radius: 12%;
+    }
+
+    .next {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 2.5rem;
+        cursor: pointer;
+
+    }
+
+    .back {
+        position: absolute;
+        top: 0;
+        left: 17%;
+        font-size: 2.5rem;
+        cursor: pointer;
+    }
+}

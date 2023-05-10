@@ -13,16 +13,12 @@ export const Modules = () => {
 
 
   const navigate = useNavigate();
-  const handleBack = () => {
-    navigate('/')
-  }
 
 
   useEffect(() => {
     const currentPath = window.location.pathname;
     const selectedIndex = hrefs.findIndex(href => currentPath.startsWith(href));
     setSelectedIndex(selectedIndex);
-    console.log('inside useEffect' + hrefs.findIndex(href => href === currentPath.startsWith(href)));
   }, [hrefs]);
 
   return (
@@ -30,7 +26,7 @@ export const Modules = () => {
       <div className="sideBar">
 
         <div className="logo">
-          <img src='../../images/logo.png' alt='logo' onClick={handleBack} />
+          <img src='../../images/logo.png' alt='logo' onClick={() => navigate('/')} />
           <span>InnovateX Academy</span> 
         </div>
 
