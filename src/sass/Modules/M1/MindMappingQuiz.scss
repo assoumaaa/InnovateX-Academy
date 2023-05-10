@@ -1,0 +1,44 @@
+@import "../../Global.scss";
+
+.mindMappingQuiz {
+    padding: $main_padding;
+    margin-left: $main_margin;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    height: 110vh;
+
+    img {
+        width: 60%;
+        height: 70%;
+        border-radius: 10%;
+        border: black solid 1px;
+    }
+
+    span {
+        font-size: 3rem;
+        font-weight: 400;
+    }
+
+    button {
+        transition: all 1s ease;
+        padding: 1rem;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 10px;
+        background-color: $main_b;
+        border: 2px solid black;
+        color: $main_w;
+        width: 30%;
+
+
+        &:hover {
+            background-color: $main_y;
+            color: $main_b;
+        }
+    }
+
+}

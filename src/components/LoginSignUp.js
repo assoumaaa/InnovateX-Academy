@@ -5,8 +5,6 @@ import { SignUp } from './SignUp';
 
 
 
-
-
 export const LoginSignUp = () => {
 
     const [signUp, setSignUp] = useState(false)
@@ -15,7 +13,7 @@ export const LoginSignUp = () => {
         <div className="logInSignUp">
             <div className="left">
                 <span className='slogan'>Innovate. Empower. Succeed.</span>
-                <img src='../../images/login.jpg' alt='innovate' />
+                <img src='../../images/login.jpeg' alt='innovate' />
             </div>
 
             {signUp ? (

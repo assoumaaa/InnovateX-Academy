@@ -11,6 +11,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
+    "react-rating-stars-component": "^2.2.0",
     "react-router-dom": "^6.10.0",
     "react-scripts": "5.0.1",
     "sass": "^1.60.0",
@@ -18,7 +19,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "concurrently \"npm run start:react\" \"npm run start:firebase\"",
+    "start": "react-scripts start",
     "start:react": "react-scripts start",
     "start:firebase": "cd backend && node server.js",
     "build": "react-scripts build",

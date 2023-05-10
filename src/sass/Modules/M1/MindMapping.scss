@@ -1,0 +1,30 @@
+@import "../../Global.scss";
+
+.mindMapping {
+    padding: $main_padding;
+    margin-left: $main_margin;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4rem;
+    height: 100vh;
+
+
+    h1{
+        font-size: 4rem;  
+    }
+
+    span{
+        gap: 1rem;
+        font-size: 2rem;
+        line-height: 2.5rem;
+        font-weight: 400;
+
+        h1{
+            font-size: 3rem;
+            color: $main_y;
+            display: inline;
+        }
+    }
+}

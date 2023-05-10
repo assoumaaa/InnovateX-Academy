@@ -5,7 +5,7 @@ import { BsArrowLeft } from "react-icons/bs";
 import authService from '../backend/services/authService';
 
 
-export const Login = ({setSignUp}) => {
+export const Login = ({ setSignUp }) => {
 
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
@@ -16,8 +16,7 @@ export const Login = ({setSignUp}) => {
     const handleLogin = async (e) => {
         
         e.preventDefault();
-        authService.login(email,
-             password)
+        authService.login(email, password)
             .then((result) => {
                 if (result === 'OK') {
                     navigate('/modules')
@@ -25,11 +24,11 @@ export const Login = ({setSignUp}) => {
             })
     }
 
-  
 
 
     return (
         <div className="right">
+            <BsArrowLeft className='back' onClick={() => navigate('/')} />
             <BsArrowLeft className='back' onClick={() => navigate('/')} />
             <div className="name_slogan">
                 <img src='../../images/logo.png' alt='logo' />
@@ -39,19 +38,19 @@ export const Login = ({setSignUp}) => {
                 <form>
                     <div className="form-group">
                         <label htmlFor="email">Email address</label>
-                        <input type="email" className="form-control" id="email" placeholder="Enter email" />
+                        <input type="email" className="form-control" id="email" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="password">Password</label>
-                        <input type="password" className="form-control" id="password" placeholder="Password" />
+                        <input type="password" className="form-control" id="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                     </div>
                     <div className="button">
-                        <button type="submit" className="btn btn-primary">Log In</button>
+                        <button type="submit" className="btn btn-primary" onClick={handleLogin}>Log In</button>
                         <span>Don't have an account? <a onClick={() => setSignUp(true)}>Sign up</a></span>
                     </div>
                 </form>
-            </div>
-        </div>
+            </div >
+        </div >
     )
 }
 
