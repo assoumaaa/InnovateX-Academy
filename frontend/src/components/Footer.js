@@ -9,7 +9,7 @@ export const Footer = () => {
                 <div className="name_slogan">
                     <img src='../../images/logo.png' alt='logo' />
                     <div className="names">
-                        <span clßassName='name'>InnovateX Academy</span>
+                        <span className='name'>InnovateX Academy</span>
                         <span className='slogan'>Innovate. Empower. Succeed.</span>
                     </div>
                 </div>

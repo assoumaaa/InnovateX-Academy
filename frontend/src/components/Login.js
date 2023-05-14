@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import '../sass/Login.scss'
 import { useNavigate } from 'react-router-dom';
 import { BsArrowLeft } from "react-icons/bs";
-import authService from '../backend/services/authService';
-
+import axios from 'axios';
 
 export const Login = ({ setSignUp }) => {
 
@@ -13,17 +12,26 @@ export const Login = ({ setSignUp }) => {
 
     
 
-    const handleLogin = async (e) => {
-        
+    const handleLogin = async (e) => {        
         e.preventDefault();
-        authService.login(email, password)
-            .then((result) => {
-                if (result === 'OK') {
-                    navigate('/modules')
-                }
-            })
-    }
+        try {
+            const response = await axios.post('http://localhost:3001/login', {
+              email: email,
+              password: password,
+            });
 
+            if (response.status === 200) {
+                navigate('/modules')
+            } 
+           
+            else {
+                console.log('login failed');
+            }
+
+          } catch (error) {
+            console.error(error);
+          }
+    }
 
 
     return (
