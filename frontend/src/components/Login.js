@@ -39,7 +39,7 @@ export const Login = ({ setSignUp }) => {
             <BsArrowLeft className='back' onClick={() => navigate('/')} />
             <BsArrowLeft className='back' onClick={() => navigate('/')} />
             <div className="name_slogan">
-                <img src='../../images/login-signup/logo.png' alt='logo' />
+                <img src='../../images/logo.png' alt='logo' />
                 <span>Sign in to InnovateX Academy</span>
             </div>
             <div className="login-container">

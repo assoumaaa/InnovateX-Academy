@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import '../../sass/Modules/M1/M1.scss'
 import { Modules } from '../../components/Modules'
-import { Start } from './Start'
 import { MindMappingImage } from './MindMappingImage'
 import { SixThinkingHats } from './SixThinkingHats'
 import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
@@ -11,6 +10,10 @@ import { MindMappingQuiz } from './MindMappingQuiz'
 import { ModuleOneQuiz } from './ModuleOneQuiz'
 import { BrainStorming } from './BrainStorming'
 import { Review } from './Review'
+import { Start } from '../../components/Start'
+import { info_m1 } from '../../Information/StartInfo'
+
+
 
 export const M1 = () => {
 
@@ -23,13 +26,21 @@ export const M1 = () => {
   const [moduleOneQuiz, SetModuleOneQuiz] = useState(false)
   const [brainStorming, SetBrainStorming] = useState(false)
   const [review, SetReview] = useState(false)
+  
+  
+
+
 
   if (start) {
     return (
       <>
         <Modules />
-        <Start SetImage={SetImage} SetStart={SetStart} />
-
+        <Start
+          Title={info_m1.Title}
+          Summary={info_m1.Summary}
+          Image={info_m1.Image}
+          SetAsTrue={SetImage}
+          SetAsFalse={SetStart} />
       </>
     )
   }

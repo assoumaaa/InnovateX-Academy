@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import '../sass/Login.scss'
 import { useNavigate } from 'react-router-dom';
 import { BsArrowLeft } from "react-icons/bs";
-import authService from '../backend/services/authService';
+
 import axios from 'axios';
 
 
@@ -28,7 +28,7 @@ export const SignUp = ({ setSignUp }) => {
 
             if (response.status === 200) {
                 navigate('/modules')
-            } 
+            }
            
             else {
                 console.log('sign-up failed');
@@ -45,7 +45,7 @@ export const SignUp = ({ setSignUp }) => {
         <div className="right">
             <BsArrowLeft className='back' onClick={() => navigate('/')} />
             <div className="name_slogan">
-                <img src='../../images/login-signup/logo.png' alt='logo' />
+                <img src='../../images/logo.png' alt='logo' />
                 <span>Register to InnovateX Academy</span>
             </div>
             <div className="login-container">

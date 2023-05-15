@@ -1,0 +1,27 @@
+@import "./Global.scss";
+
+.video {
+    padding: $main_padding;
+    margin-left: $main_margin;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 2rem;
+    height: 100vh;
+
+
+    
+
+    .video-frame {
+        width: 100%;
+        height: 100% ;
+    }
+
+    span{
+        font-size: 2rem;
+        font-weight: 300;
+    }
+
+}
