@@ -3,7 +3,7 @@ import '../sass/Login.scss'
 import { useNavigate } from 'react-router-dom';
 import { BsArrowLeft } from "react-icons/bs";
 
-import axios from 'axios';
+import { signUp } from '../hooks/hooks';
 
 
 
@@ -14,29 +14,14 @@ export const SignUp = ({ setSignUp }) => {
     const [fullName, SetFullName] = useState('')
     const [email, SetEmail] = useState('');
     const [password, SetPassword] = useState('');
+    const { signUp } = signUp();
 
 
-
-    const handleSignUp = async (e) => {        
+    const handleSignUp = async (e) => {
         e.preventDefault();
-        try {
-            const response = await axios.post('http://localhost:3001/signup', {
-              fullName: fullName,
-              email: email,
-              password: password,
-            });
-
-            if (response.status === 200) {
-                navigate('/modules')
-            }
-           
-            else {
-                console.log('sign-up failed');
-            }
-
-          } catch (error) {
-            console.error(error);
-          }
+        signUp(fullName, email, password, () => {
+            navigate('/modules');
+          });
     }
 
 

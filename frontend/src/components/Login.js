@@ -1,36 +1,27 @@
 import React, { useState } from 'react'
-import '../sass/Login.scss'
 import { useNavigate } from 'react-router-dom';
 import { BsArrowLeft } from "react-icons/bs";
+import { logIn } from '../hooks/hooks';
+
 import axios from 'axios';
+import '../sass/Login.scss'
+
+
 
 export const Login = ({ setSignUp }) => {
 
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const { logIn } = logIn();
 
-    
 
-    const handleLogin = async (e) => {        
+
+    const handleLogin = async (e) => {
         e.preventDefault();
-        try {
-            const response = await axios.post('http://localhost:3001/login', {
-              email: email,
-              password: password,
-            });
-
-            if (response.status === 200) {
-                navigate('/modules')
-            } 
-           
-            else {
-                console.log('login failed');
-            }
-
-          } catch (error) {
-            console.error(error);
-          }
+        logIn(email, password, () => {
+            navigate('/modules');
+        })
     }
 
 
