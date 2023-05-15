@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../../sass/Modules/M1/ModuleOneQuiz.scss'
-import { quiz_m1 } from '../Quizes/quizes'
+import { quiz_m1 } from '../../quizes/Quizes'
+
 
 
 
@@ -17,7 +18,6 @@ export const ModuleOneQuiz = ({ SetBrainStorming, SetModuleOneQuiz }) => {
         wrongAnswers: 0,
     })
     const [allCorrect, SetAllCorrect] = useState(false)
-
     const { questions } = quiz_m1
     const { question, choices, correctAnswer } = questions[activeQuestion]
 

@@ -8,10 +8,6 @@ export const Modules = () => {
   const [selectedIndex, setSelectedIndex] = useState();
   const modules_names = ["Design Thinking", "Six Thinking Hats", "Selection", "Persona", "Jobs To Be Done", "Value Proposition", "POV", "Ideation", "Prototype", "Module 9", "Module 10", "Module 11", "Module 12", "Module 13", "Module 14"];
   const hrefs = ['/modules/m0', '/modules/m1', '/modules/m2', '/modules/m3', '/modules/m4', '/modules/m5', '/modules/m6', '/modules/m7', '/modules/m8', '/modules/m9', '/modules/m10', '/modules/m11', '/modules/m12', '/modules/m13', '/modules/m14']
-
-  
-
-
   const navigate = useNavigate();
 
 
@@ -21,20 +17,21 @@ export const Modules = () => {
     setSelectedIndex(selectedIndex);
   }, [hrefs]);
 
+
   return (
     <div className="modules">
       <div className="sideBar">
 
         <div className="logo">
-          <img src='../../images/login-signup/logo.png' alt='logo' onClick={() => navigate('/')} />
-          <span>InnovateX Academy</span> 
+          <img src='../../images/logo.png' alt='logo' onClick={() => navigate('/')} />
+          <span>InnovateX Academy</span>
         </div>
 
         <div className="modules">
           {modules_names.map((module, index) => (
             <a key={index} href={hrefs[index]}>
               <div className={`${index === selectedIndex ? 'eachModule selected' : 'eachModule'}`} onClick={() => setSelectedIndex(index)}>
-                <BiLockAlt className='lock'/>
+                <BiLockAlt className='lock' />
                 <h1> {modules_names[index]}</h1>
               </div>
             </a>
