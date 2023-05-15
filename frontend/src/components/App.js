@@ -39,7 +39,7 @@ function App() {
             <Route path="/modules/m0" element={<M0 />} />
             <Route path="/modules/m1" element={<M1 />} />
             <Route path="/modules/m2" element={<M2 />} /> 
-            <Route path="/modules/m" element={<M3 />} />        
+            <Route path="/modules/m3" element={<M3 />} />        
           </Routes>
 
         </div>
