@@ -34,7 +34,7 @@ app.post('/signup', (req, res) => {
         .doc(userId)
         .set(user)
         .then(() => {
-          res.json({ success: true, message: 'Sign-up successful' });
+          res.json({ success: true, message: 'Sign-up successful', userID: userID });
         })
         .catch((error) => {
           res.status(500).json({ success: false, message: 'Error signing up' });
@@ -54,7 +54,9 @@ app.post('/login', (req, res) => {
     .signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
       // User login successful
-      res.json({ success: true, message: 'Login successful' });
+      const userID = userCredential.user.uid;
+
+      res.json({ success: true, message: 'Login successful', userID: userID });
     })
     .catch((error) => {
       // Handle login errors

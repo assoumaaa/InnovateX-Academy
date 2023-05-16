@@ -23,8 +23,7 @@ export const Navbar = () => {
     }
 
     useEffect(() => {
-        if (!userID)
-            setUserID(window.localStorage.getItem('userID'))
+        if (!userID) setUserID(window.localStorage.getItem('userID'));
     }, [])
 
 

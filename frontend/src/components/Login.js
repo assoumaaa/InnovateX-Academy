@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { BsArrowLeft } from "react-icons/bs";
 import { logIn } from '../hooks/hooks';
-
-import axios from 'axios';
 import '../sass/Login.scss'
 
 
@@ -13,16 +11,17 @@ export const Login = ({ setSignUp }) => {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const { logIn } = logIn();
-
 
 
     const handleLogin = async (e) => {
         e.preventDefault();
-        logIn(email, password, () => {
+        const userID = await logIn(email, password);
+        
+        if (userID) {
+            window.localStorage.setItem("userID", userID);
             navigate('/modules');
-        })
-    }
+        }
+    };
 
 
     return (

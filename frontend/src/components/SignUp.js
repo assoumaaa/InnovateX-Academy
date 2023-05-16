@@ -14,14 +14,17 @@ export const SignUp = ({ setSignUp }) => {
     const [fullName, SetFullName] = useState('')
     const [email, SetEmail] = useState('');
     const [password, SetPassword] = useState('');
-    const { signUp } = signUp();
+
 
 
     const handleSignUp = async (e) => {
         e.preventDefault();
-        signUp(fullName, email, password, () => {
+        const userID = await signUp(fullName, email, password);
+
+        if (userID) {
+            window.localStorage.setItem("userID", userID);
             navigate('/modules');
-          });
+        }
     }
 
 

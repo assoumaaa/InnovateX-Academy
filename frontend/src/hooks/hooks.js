@@ -1,8 +1,4 @@
-import React, { useState } from 'react'
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-
-
 
 
 
@@ -17,33 +13,36 @@ export const signUp = async (fullName, email, password) => {
         });
 
         if (response.status !== 200) {
-            console.log("user did NOT register!")
+            throw new Error('SignUp failed!');
         }
-    } catch (error) {
-        return (error);
-        console.error(error);
-    }
 
+        return true;
+    } catch (error) {
+        console.error(error);
+        return false;
+    }
 };
 
 
 export const logIn = async (email, password) => {
 
-
-    try {           
+    try {
         const response = await axios.post('http://localhost:3001/login', {
             email: email,
             password: password,
         });
 
         if (response.status !== 200) {
-            console.log("login FAILED!")
+            throw new Error('Login failed!');
         }
+        
+        return response.data.userID;
+        
 
     } catch (error) {
         console.error(error);
+        return null;
     }
-
 };
 
 
