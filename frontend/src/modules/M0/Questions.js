@@ -2,8 +2,6 @@ import React from 'react'
 import '../../sass/Modules/M0/Questions.scss'
 
 
-
-
 export const Questions = () => {
   return (
     <div className="questions">

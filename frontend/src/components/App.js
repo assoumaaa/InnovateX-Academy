@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
 import { Product } from './Product';
@@ -20,7 +20,6 @@ function App() {
     <div className='app'>
       <BrowserRouter>
         <div className="sections">
-
           <Routes>
             <Route path='/' element={
               <>
@@ -31,17 +30,17 @@ function App() {
                 <Footer />
               </>
             } />
-          </Routes>
 
-          <Routes>
             <Route path='login' element={<LoginSignUp />} />
-            <Route path="/modules" element={<Modules />} />
-            <Route path="/modules/m0" element={<M0 />} />
-            <Route path="/modules/m1" element={<M1 />} />
-            <Route path="/modules/m2" element={<M2 />} /> 
-            <Route path="/modules/m3" element={<M3 />} />        
-          </Routes>
 
+            <Route path="/modules" element={<Modules />}>
+              <Route path="m0" element={<M0 />} />
+              <Route path="m1" element={<M1 />} />
+              <Route path="m2" element={<M2 />} />
+              <Route path="m3" element={<M3 />} />
+            </Route>
+
+          </Routes>
         </div>
       </BrowserRouter>
     </div>

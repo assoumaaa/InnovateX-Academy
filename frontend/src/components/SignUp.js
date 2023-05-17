@@ -28,7 +28,6 @@ export const SignUp = ({ setSignUp }) => {
     }
 
 
-
     return (
         <div className="right">
             <BsArrowLeft className='back' onClick={() => navigate('/')} />

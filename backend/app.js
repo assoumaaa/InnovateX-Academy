@@ -64,6 +64,27 @@ app.post('/login', (req, res) => {
     });
 });
 
+app.get('/user/:userId', (req, res) => {
+  const { userId } = req.params;
+
+  firebase
+    .firestore()
+    .collection('users')
+    .doc(userId)
+    .get()
+    .then((doc) => {
+      if (!doc.exists) {
+        res.status(404).json({ success: false, message: 'User not found' });
+      } else {
+        res.json({ success: true, userData: doc.data() });
+      }
+    })
+    .catch((error) => {
+      res.status(500).json({ success: false, message: 'Error retrieving user data' });
+    });
+});
+
+
 app.listen(3001, () => {
   console.log('Server is running on port 3001');
 });

@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import '../../sass/Modules/M1/M1.scss'
-import { Modules } from '../../components/Modules'
 import { MindMappingImage } from './MindMappingImage'
 import { SixThinkingHats } from './SixThinkingHats'
 import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
@@ -34,7 +32,7 @@ export const M1 = () => {
   if (start) {
     return (
       <>
-        <Modules />
+
         <Start
           Title={info_m1.Title}
           Summary={info_m1.Summary}
@@ -48,7 +46,6 @@ export const M1 = () => {
   else if (img) {
     return (
       <>
-        <Modules />
         <MindMappingImage />
         <BsArrowRight onClick={() => { SetSixThinkingHats(true); SetImage(false); }} className='next' />
         <BsArrowLeft onClick={() => { SetStart(true); SetImage(false); }} className='back' />
@@ -58,7 +55,6 @@ export const M1 = () => {
   else if (sixThinkingHats) {
     return (
       <>
-        <Modules />
         <SixThinkingHats />
         <BsArrowRight onClick={() => { SetSixThinkingHats(false); SetSixThinkingHatsTask(true); }} className='next' />
         <BsArrowLeft onClick={() => { SetImage(true); }} className='back' />
@@ -68,7 +64,6 @@ export const M1 = () => {
   else if (sixThinkingHatsTask) {
     return (
       <>
-        <Modules />
         <SixThinkingHatsTask />
         <BsArrowRight onClick={() => { SetSixThinkingHatsTask(false); SetMindMapping(true); }} className='next' />
         <BsArrowLeft onClick={() => { SetSixThinkingHats(true) }} className='back' />
@@ -78,7 +73,6 @@ export const M1 = () => {
   else if (mindMapping) {
     return (
       <>
-        <Modules />
         <MindMapping />
         <BsArrowRight onClick={() => { SetMindMapping(false); SetMindMappingQuizStart(true); }} className='next' />
         <BsArrowLeft onClick={() => { SetSixThinkingHatsTask(true) }} className='back' />
@@ -88,7 +82,6 @@ export const M1 = () => {
   else if (mindMappingQuizStart) {
     return (
       <>
-        <Modules />
         <MindMappingQuiz SetModuleOneQuiz={SetModuleOneQuiz} SetMindMappingQuizStart={SetMindMappingQuizStart} />
         <BsArrowLeft onClick={() => { SetMindMapping(true) }} className='back' />
       </>
@@ -97,7 +90,6 @@ export const M1 = () => {
   else if (moduleOneQuiz) {
     return (
       <>
-        <Modules />
         <ModuleOneQuiz SetBrainStorming={SetBrainStorming} SetModuleOneQuiz={SetModuleOneQuiz} />
         <BsArrowLeft onClick={() => { SetMindMappingQuizStart(true) }} className='back' />
       </>
@@ -106,7 +98,6 @@ export const M1 = () => {
   else if (brainStorming) {
     return (
       <>
-        <Modules />
         <BrainStorming />
         <BsArrowRight onClick={() => { SetBrainStorming(false); SetReview(true); }} className='next' />
         <BsArrowLeft onClick={() => { SetModuleOneQuiz(true) }} className='back' />
@@ -116,7 +107,6 @@ export const M1 = () => {
   else if (review) {
     return (
       <>
-        <Modules />
         <Review />
         <BsArrowLeft onClick={() => { SetBrainStorming(true) }} className='back' />
       </>
