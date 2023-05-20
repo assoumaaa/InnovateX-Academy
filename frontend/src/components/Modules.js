@@ -9,15 +9,18 @@ import '../sass/Modules.scss'
 export const Modules = () => {
 
   const navigate = useNavigate();
-  const [selectedIndex, setSelectedIndex] = useState();
+  const [selectedIndex, setSelectedIndex] = useState(1);
   const [modulesCompleted, setModulesCompleted] = useState();
 
   const modules_names = ["Design Thinking", "Six Thinking Hats", "Selection", "Persona", "Jobs To Be Done", "Value Proposition", "POV", "Ideation", "Prototype", "Module 9", "Module 10", "Module 11", "Module 12", "Module 13", "Module 14"];
   const hrefs = ['/modules/m0', '/modules/m1', '/modules/m2', '/modules/m3', '/modules/m4', '/modules/m5', '/modules/m6', '/modules/m7', '/modules/m8', '/modules/m9', '/modules/m10', '/modules/m11', '/modules/m12', '/modules/m13', '/modules/m14']
 
-  getUserData().then(userData => {
-    setModulesCompleted(userData.module);
-  });
+
+  useEffect(() => {
+    getUserData().then(userData => {
+      setModulesCompleted(userData.module);
+    });
+  }, []);
 
 
   useEffect(() => {

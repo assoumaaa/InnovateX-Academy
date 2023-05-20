@@ -79,8 +79,7 @@ export const M3 = () => {
     else if (startingEmpathyMap) {
         return (
             <>
-                <StartingEmpathyMap />
-                <BsArrowRight onClick={() => { SetEmpathyMapTask(true); SetEmpathyMap(false); }} className='next' />
+                <StartingEmpathyMap SetEmpathyMapTask={SetEmpathyMapTask} SetStartingEmpathyMap={SetStartingEmpathyMap} />
                 <BsArrowLeft onClick={() => { SetEmpathyMapImage(true); SetStartingEmpathyMap(false); }} className='back' />
             </>
         )
@@ -90,10 +89,8 @@ export const M3 = () => {
         return (
             <>
                 <EmpathyMapTask />
-                <BsArrowRight onClick={() => { SetEmpathyMap(true);  }} className='next' />
-                <BsArrowLeft onClick={() => { SetVideo(true); SetEmpathyMap(false); }} className='back' />
+                <BsArrowLeft onClick={() => { SetStartingEmpathyMap(true); SetEmpathyMapTask(false); }} className='back' />
             </>
         )
     }
-
 }

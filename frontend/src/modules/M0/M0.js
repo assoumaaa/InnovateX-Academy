@@ -23,7 +23,6 @@ export const M0 = () => {
     if (start) {
         return (
             <>
-
                 <Start
                     Title={info_m0.Title}
                     Summary={info_m0.Summary}

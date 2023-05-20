@@ -48,15 +48,16 @@ export const logIn = async (email, password) => {
 
 export const getUserData = async () => {
     try {
-        const userID = window.localStorage.getItem("userID")
+        const userID = window.localStorage.getItem("userID");
+
         const response = await axios.get(`http://localhost:3001/user/${userID}`);
 
         if (response.status !== 200) {
             throw new Error('Failed to fetch user data!');
         }
 
-        // the user data is in the 'userData' field of the response
         return response.data.userData;
+        
     } catch (error) {
         console.error(error);
         return null;

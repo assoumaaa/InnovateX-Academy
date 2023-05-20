@@ -12,7 +12,6 @@ export const Navbar = () => {
     const [userID, setUserID] = useState()
 
     const handleModules = () => {
-        console.log(userID)
         if (userID) navigate('/modules')
         else navigate('/login')
     }
