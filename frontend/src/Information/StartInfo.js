@@ -23,3 +23,9 @@ export const info_m3 = {
     Image: '../../images/m3/m3.jpeg',
 }
 
+export const info_m4 = {
+    Title: 'TESTTT',
+    Summary: 'This module helps entrepreneurs and innovation teams identify their target audience by understanding their needs, behaviors, motivations, and pain points. It utilizes empathy maps and customer journey mapping to develop a deep understanding of users. By creating a persona that represents the ideal target user, teams can use it as a guide during the innovation process.',
+    Image: '../../images/m3/m3.jpeg',
+}
+

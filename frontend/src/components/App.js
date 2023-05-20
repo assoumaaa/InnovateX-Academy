@@ -13,6 +13,7 @@ import { M2 } from '../modules/M2/M2';
 import { M3 } from '../modules/M3/M3';
 
 import '../sass/App.scss'
+import { M4 } from '../modules/M4/M4';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
               <Route path="m1" element={<M1 />} />
               <Route path="m2" element={<M2 />} />
               <Route path="m3" element={<M3 />} />
+              <Route path="m4" element={<M4 />} />
             </Route>
 
           </Routes>
