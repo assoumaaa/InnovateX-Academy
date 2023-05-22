@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 export const Review = ({ Description, Modules, NextModule }) => {
     const [rating, setRating] = useState(0);
     const navigate = useNavigate();
+    console.log(rating)
 
 
     const handleRatingChange = (newRating) => {

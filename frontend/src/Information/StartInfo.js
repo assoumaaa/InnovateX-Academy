@@ -36,3 +36,9 @@ export const info_m5 = {
     Image: '../../images/m5/m5.jpg',
 }
 
+export const info_m6 = {
+    Title: 'Point Of View',
+    Summary: 'In this module we will start with new concepts that will act as a turning point from the problem towards the solution.',
+    Image: '../../images/m6/m6.jpg',
+}
+

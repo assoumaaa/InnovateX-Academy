@@ -4,6 +4,7 @@ import { BiLockAlt } from "react-icons/bi";
 import { getUserData } from '../hooks/hooks';
 import { Outlet } from 'react-router-dom';
 import '../sass/Modules.scss'
+import { Ring } from 'react-spinners-css'
 
 
 export const Modules = () => {
@@ -32,7 +33,7 @@ export const Modules = () => {
 
   return (
 
-    modulesCompleted && (
+    modulesCompleted ? (
       <div className="modules">
         <div className="sideBar">
 
@@ -62,6 +63,10 @@ export const Modules = () => {
         <Outlet />
       </div >
 
+    ) : (
+      <div className="loading">
+        <Ring color="#03b2fd" />
+      </div>
     )
   )
 }

@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
 import { Product } from './Product';
@@ -6,7 +6,7 @@ import { Modules } from './Modules';
 import { AboutUs } from './AboutUs';
 import { LandingPage } from './LandingPage';
 import { LoginSignUp } from './LoginSignUp';
-import { Definition } from '../modules/M0/Definition';
+
 import { M0 } from '../modules/M0/M0'
 import { M1 } from '../modules/M1/M1';
 import { M2 } from '../modules/M2/M2';
