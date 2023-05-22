@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { info_m4 } from '../../Information/StartInfo'
 import { Start } from '../../components/Start'
+import { info_m4 } from '../../Information/StartInfo'
+
 
 
 export const M4 = () => {

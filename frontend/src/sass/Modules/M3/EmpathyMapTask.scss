@@ -5,47 +5,73 @@
     margin-left: $main_margin;
 
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    max-height: 150vh;
-    width: 100%;
-    overflow: auto;
+    flex-direction: column;
     gap: 1.5rem;
 
+    max-height: 120vh;
+    width: 100%;
+    overflow: auto;
 
+    .eachQuestion {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
 
+        gap: 1.5rem;
 
-    h1 {
-        font-size: 2.5rem;
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+
+            color: $main_y;
+        }
+
+        li {
+            font-size: 1.5rem;
+            list-style-type: circle;
+            font-weight: 300;
+        }
+
+        textarea {
+            width: 70%;
+            padding: 1rem;
+            font-size: 1rem;
+            border: solid 1px rgb(178, 178, 178);
+            border-radius: 20px;
+            height: 12.5rem;
+
+        }
+
+        hr {
+            height: 1.5px;
+            background: rgb(173, 172, 172);
+            width: 100%;
+            border: none;
+        }
+
     }
 
-    h2 {
 
-        color: $main_y;
-    }
 
-    li {
-        font-size: 1.5rem;
-        list-style-type: circle;
-        font-weight: 300;
-    }
-
-    textarea {
-        width: 70%;
-        height: 30rem;
+    button {
+        transition: all 1s ease;
         padding: 1rem;
         font-size: 1rem;
-        border: solid 1px rgb(178, 178, 178);
-        border-radius: 20px;
+        font-weight: bold;
+        border-radius: 10px;
+        background-color: $main_b;
+        border: 2px solid black;
+        color: $main_w;
+        width: 30%;
+
+
+        &:hover {
+            background-color: $main_y;
+            color: $main_b;
+        }
     }
-
-    hr{
-        height: 3px;
-        background: rgb(231, 227, 227);
-        width: 100%;
-        border: none;
-    }
-
-
 }

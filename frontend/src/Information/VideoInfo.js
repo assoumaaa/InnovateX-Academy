@@ -8,3 +8,8 @@ export const m3_video = {
     headerText: 'Next, let’s watch this video for more understanding !',
     url: 'https://www.youtube.com/embed/v6EWN4EjHM0'
 }
+
+export const m5_video = {
+    headerText: 'Watch the following video to understand the value proposition canvas better and then fill the canvas.',
+    url: 'https://www.youtube.com/embed/ReM1uqmVfP0'
+}

@@ -1,4 +1,4 @@
-@import "../../Global.scss";
+@import "Global.scss";
 
 .review {
     padding: $main_padding;
@@ -17,17 +17,23 @@
     .wrapper-review {
         display: flex;
         flex-direction: column;
-        gap: 3rem;
+        gap: 4rem;
+
 
         .module-review {
             display: flex;
-            align-items: center;
+            flex-direction: column;
             gap: 3rem;
+
+            .eachModule {
+                display: flex;
+                gap: 5rem;
+
+            }
 
             span {
                 font-size: 2rem;
             }
-
         }
     }
 

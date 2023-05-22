@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../sass/Modules/M1/MindMappingImage.scss'
+import '../../sass/ImageWithHeader.scss'
 
 
 export const EmpathyMapImage = () => {

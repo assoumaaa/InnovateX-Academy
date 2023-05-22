@@ -14,6 +14,8 @@ import { M3 } from '../modules/M3/M3';
 
 import '../sass/App.scss'
 import { M4 } from '../modules/M4/M4';
+import { M5 } from '../modules/M5/M5';
+import { M6 } from '../modules/M6/M6';
 
 
 function App() {
@@ -40,8 +42,10 @@ function App() {
               <Route path="m2" element={<M2 />} />
               <Route path="m3" element={<M3 />} />
               <Route path="m4" element={<M4 />} />
+              <Route path="m5" element={<M5 />} />
+              <Route path="m6" element={<M6 />} />
             </Route>
-
+            
           </Routes>
         </div>
       </BrowserRouter>

@@ -29,3 +29,10 @@ export const info_m4 = {
     Image: '../../images/m3/m3.jpeg',
 }
 
+
+export const info_m5 = {
+    Title: 'Value Proposition Canvas',
+    Summary: 'The Value Proposition Canvas is a strategic tool used to align a product or service with customer needs and values. It is beneficial for refining existing offerings or developing new ones, as it helps ensure a market-fit by modeling the connection between customer segments and value propositions.',
+    Image: '../../images/m5/m5.jpg',
+}
+

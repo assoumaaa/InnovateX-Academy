@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
-import { MindMappingImage } from './MindMappingImage'
+import { Review } from '../../components/Review'
+import { MindMapping } from './MindMapping'
+import { ModuleOneQuiz } from './ModuleOneQuiz'
+import { Start } from '../../components/Start'
+import { BrainStorming } from './BrainStorming'
 import { SixThinkingHats } from './SixThinkingHats'
+import { MindMappingQuiz } from './MindMappingQuiz'
 import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 import { SixThinkingHatsTask } from './SixThinkingHatsTask'
-import { MindMapping } from './MindMapping'
-import { MindMappingQuiz } from './MindMappingQuiz'
-import { ModuleOneQuiz } from './ModuleOneQuiz'
-import { BrainStorming } from './BrainStorming'
-import { Review } from './Review'
-import { Start } from '../../components/Start'
 import { info_m1 } from '../../Information/StartInfo'
+import { ImageWithHeader } from '../../components/ImageWithHeader';
+import { review_m1 } from '../../Information/ReviewInfo'
 
 
 
@@ -24,8 +25,8 @@ export const M1 = () => {
   const [moduleOneQuiz, SetModuleOneQuiz] = useState(false)
   const [brainStorming, SetBrainStorming] = useState(false)
   const [review, SetReview] = useState(false)
-  
-  
+
+
 
 
 
@@ -46,7 +47,7 @@ export const M1 = () => {
   else if (img) {
     return (
       <>
-        <MindMappingImage />
+        <ImageWithHeader Title={'Quick Insight!'} Image={'../../images/m1/mindmapping.png'} />
         <BsArrowRight onClick={() => { SetSixThinkingHats(true); SetImage(false); }} className='next' />
         <BsArrowLeft onClick={() => { SetStart(true); SetImage(false); }} className='back' />
       </>
@@ -107,7 +108,7 @@ export const M1 = () => {
   else if (review) {
     return (
       <>
-        <Review />
+        <Review Description={review_m1.Description} Modules={review_m1.Modules} NextModule={review_m1.NextModule} />
         <BsArrowLeft onClick={() => { SetBrainStorming(true) }} className='back' />
       </>
     )

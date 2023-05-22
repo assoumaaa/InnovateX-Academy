@@ -10,6 +10,9 @@ import { m3_video } from '../../Information/VideoInfo';
 import { StartingEmpathyMap } from './StartingEmpathyMap';
 import { EmpathyMapTask } from './EmpathyMapTask';
 
+import { review_m3 } from '../../Information/ReviewInfo';
+import { Review } from '../../components/Review';
+
 export const M3 = () => {
 
     const [start, SetStart] = useState(true)
@@ -19,6 +22,7 @@ export const M3 = () => {
     const [empathyMapImage, SetEmpathyMapImage] = useState(false)
     const [startingEmpathyMap, SetStartingEmpathyMap] = useState(false)
     const [empathyMapTask, SetEmpathyMapTask] = useState(false)
+    const [review, SetReview] = useState(false)
 
 
 
@@ -89,7 +93,17 @@ export const M3 = () => {
         return (
             <>
                 <EmpathyMapTask />
+                <BsArrowRight onClick={() => { SetReview(true); SetEmpathyMapTask(false); }} className='next' />
                 <BsArrowLeft onClick={() => { SetStartingEmpathyMap(true); SetEmpathyMapTask(false); }} className='back' />
+
+            </>
+        )
+    }
+
+    else if (review) {
+        return (
+            <>
+                <Review Description={review_m3.Description} Modules={review_m3.Modules} NextModule={review_m3.NextModule} />
             </>
         )
     }
