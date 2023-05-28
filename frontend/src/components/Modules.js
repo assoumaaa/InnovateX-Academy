@@ -10,7 +10,7 @@ import { Ring } from 'react-spinners-css'
 export const Modules = () => {
 
   const navigate = useNavigate();
-  const [selectedIndex, setSelectedIndex] = useState(1);
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const [modulesCompleted, setModulesCompleted] = useState();
 
   const modules_names = ["Design Thinking", "Six Thinking Hats", "Selection", "Persona", "Jobs To Be Done", "Value Proposition", "POV", "Ideation", "Prototype", "Module 9", "Module 10", "Module 11", "Module 12", "Module 13", "Module 14"];

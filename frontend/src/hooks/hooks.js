@@ -16,10 +16,10 @@ export const signUp = async (fullName, email, password) => {
             throw new Error('SignUp failed!');
         }
 
-        return true;
+        return response.data.userID;
     } catch (error) {
         console.error(error);
-        return false;
+        return null;
     }
 };
 
@@ -37,8 +37,6 @@ export const logIn = async (email, password) => {
         }
 
         return response.data.userID;
-
-
     } catch (error) {
         console.error(error);
         return null;
@@ -57,7 +55,7 @@ export const getUserData = async () => {
         }
 
         return response.data.userData;
-        
+
     } catch (error) {
         console.error(error);
         return null;

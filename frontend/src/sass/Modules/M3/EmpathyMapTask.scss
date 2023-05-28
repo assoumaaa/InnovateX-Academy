@@ -5,57 +5,47 @@
     margin-left: $main_margin;
 
     display: flex;
-    align-items: center;
+
+    justify-content: center;
     flex-direction: column;
+
+    height: 100vh;
+    width: 100%;
+
     gap: 1.5rem;
 
-    max-height: 120vh;
-    width: 100%;
-    overflow: auto;
 
-    .eachQuestion {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+        color: $main_y;
+    }
+
+    ul {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        
-
         gap: 1.5rem;
-
-        h1 {
-            font-size: 2.5rem;
-        }
-
-        h2 {
-
-            color: $main_y;
-        }
 
         li {
             font-size: 1.5rem;
             list-style-type: circle;
             font-weight: 300;
+            margin-left: 10%;
         }
-
-        textarea {
-            width: 70%;
-            padding: 1rem;
-            font-size: 1rem;
-            border: solid 1px rgb(178, 178, 178);
-            border-radius: 20px;
-            height: 12.5rem;
-
-        }
-
-        hr {
-            height: 1.5px;
-            background: rgb(173, 172, 172);
-            width: 100%;
-            border: none;
-        }
-
     }
 
+    textarea {
+        width: 90%;
+        padding: 1rem;
+        font-size: 1rem;
+        border: solid 1px rgb(178, 178, 178);
+        border-radius: 20px;
+        height: 12.5rem;
 
+    }
 
     button {
         transition: all 1s ease;

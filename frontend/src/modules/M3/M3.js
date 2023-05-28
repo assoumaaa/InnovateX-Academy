@@ -92,10 +92,8 @@ export const M3 = () => {
     else if (empathyMapTask) {
         return (
             <>
-                <EmpathyMapTask />
-                <BsArrowRight onClick={() => { SetReview(true); SetEmpathyMapTask(false); }} className='next' />
+                <EmpathyMapTask SetReview={SetReview} SetEmpathyMapTask={SetEmpathyMapTask} />
                 <BsArrowLeft onClick={() => { SetStartingEmpathyMap(true); SetEmpathyMapTask(false); }} className='back' />
-
             </>
         )
     }

@@ -16,7 +16,7 @@ export const Login = ({ setSignUp }) => {
     const handleLogin = async (e) => {
         e.preventDefault();
         const userID = await logIn(email, password);
-        
+
         if (userID) {
             window.localStorage.setItem("userID", userID);
             navigate('/modules');

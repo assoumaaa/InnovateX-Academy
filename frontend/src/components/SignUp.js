@@ -15,7 +15,7 @@ export const SignUp = ({ setSignUp }) => {
     const [email, SetEmail] = useState('');
     const [password, SetPassword] = useState('');
 
-
+  
 
     const handleSignUp = async (e) => {
         e.preventDefault();

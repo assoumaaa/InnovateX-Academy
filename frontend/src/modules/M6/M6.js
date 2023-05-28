@@ -4,13 +4,15 @@ import { info_m6 } from '../../Information/StartInfo'
 import { POV } from './POV'
 import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 import { HMW } from './HMW';
+import { SuccessTool } from './SuccessTool';
 
 
 export const M6 = () => {
 
-    const [start, SetStart] = useState(true)
+    const [start, SetStart] = useState(false)
     const [def, SetDef] = useState(false)
     const [howMightWe, SetHowMightWe] = useState(false)
+    const [successTool, SetSuccessTool] = useState(true)
 
     if (start) {
         return (
@@ -39,7 +41,17 @@ export const M6 = () => {
         return (
             <>
                 <HMW />
+                <BsArrowRight onClick={() => { SetSuccessTool(true); SetHowMightWe(false); }} className='next' />
                 <BsArrowLeft onClick={() => { SetDef(true); SetHowMightWe(false); }} className='back' />
+            </>
+        )
+    }
+
+    else if (successTool) {
+        return (
+            <>
+                <SuccessTool />
+                <BsArrowLeft onClick={() => { SetHowMightWe(true); SetSuccessTool(false); }} className='back' />
             </>
         )
     }

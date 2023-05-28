@@ -12,7 +12,7 @@ export const Navbar = () => {
     const [userID, setUserID] = useState()
 
     const handleModules = () => {
-        if (userID) navigate('/modules')
+        if (userID) navigate('/modules/m0')
         else navigate('/login')
     }
 

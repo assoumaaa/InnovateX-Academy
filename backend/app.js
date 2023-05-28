@@ -16,10 +16,10 @@ app.post('/signup', (req, res) => {
     .auth()
     .createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
-      // User sign-up successful
+
 
       // Get the user ID
-      const userId = userCredential.user.uid;
+      const userID = userCredential.user.uid;
 
       // Create the user object
       const user = {
@@ -27,11 +27,12 @@ app.post('/signup', (req, res) => {
         email: email,
         module: [true, false, false, false, false, false, false, false, false, false, false, false, false, false]
       };
+
       // Add user to the "users" collection
       firebase
         .firestore()
         .collection('users')
-        .doc(userId)
+        .doc(userID)
         .set(user)
         .then(() => {
           res.json({ success: true, message: 'Sign-up successful', userID: userID });
@@ -39,6 +40,7 @@ app.post('/signup', (req, res) => {
         .catch((error) => {
           res.status(500).json({ success: false, message: 'Error signing up' });
         });
+
     })
     .catch((error) => {
       // Handle sign-up errors
