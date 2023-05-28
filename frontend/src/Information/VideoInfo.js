@@ -13,3 +13,9 @@ export const m5_video = {
     headerText: 'Watch the following video to understand the value proposition canvas better and then fill the canvas.',
     url: 'https://www.youtube.com/embed/ReM1uqmVfP0'
 }
+
+export const m7_video = {
+    headerText: "'Follow this video's example on using SCAMPER in order to be able to complete the next task :",
+    url: 'https://www.youtube.com/embed/-OMJINQIZzA'
+}
+

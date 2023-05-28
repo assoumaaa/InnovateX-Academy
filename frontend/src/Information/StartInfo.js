@@ -42,3 +42,9 @@ export const info_m6 = {
     Image: '../../images/m6/m6.jpg',
 }
 
+
+export const info_m7 = {
+    Title: 'Ideation',
+    Summary: 'In this module, we dive into the exciting phase of ideation ! where you generate a wide range of creative ideas and potential solutions to address the problem or challenge at hand. Ideation is a critical step in the design thinking process as it allows us to explore different perspectives, break free from constraints, and unlock innovative possibilities.',
+    Image: '../../images/m7/m7.jpg',
+}

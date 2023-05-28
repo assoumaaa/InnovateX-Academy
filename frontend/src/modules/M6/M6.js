@@ -5,14 +5,17 @@ import { POV } from './POV'
 import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 import { HMW } from './HMW';
 import { SuccessTool } from './SuccessTool';
+import { review_m6 } from '../../Information/ReviewInfo';
+import { Review } from '../../components/Review';
 
 
 export const M6 = () => {
 
-    const [start, SetStart] = useState(false)
+    const [start, SetStart] = useState(true)
     const [def, SetDef] = useState(false)
     const [howMightWe, SetHowMightWe] = useState(false)
-    const [successTool, SetSuccessTool] = useState(true)
+    const [successTool, SetSuccessTool] = useState(false)
+    const [review, SetReview] = useState(false)
 
     if (start) {
         return (
@@ -51,7 +54,17 @@ export const M6 = () => {
         return (
             <>
                 <SuccessTool />
+                <BsArrowRight onClick={() => { SetReview(true); SetSuccessTool(false); }} className='next' />
                 <BsArrowLeft onClick={() => { SetHowMightWe(true); SetSuccessTool(false); }} className='back' />
+            </>
+        )
+    }
+
+    else if (review) {
+        return (
+            <>
+                <Review Description={review_m6.Description} Modules={review_m6.Modules} NextModule={review_m6.NextModule} />
+
             </>
         )
     }

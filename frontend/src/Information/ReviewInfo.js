@@ -17,3 +17,9 @@ export const review_m5 = {
     Modules: ['Value Proposition Canvas'],
     NextModule: '/modules/m6'
 }
+
+export const review_m6 = {
+    Description: ' You have completed the sixth module and learnt about POV tools that you will use throughout the course, Please rate your understanding: ',
+    Modules: ['Point of View'],
+    NextModule: '/modules/m7'
+}

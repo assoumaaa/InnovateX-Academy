@@ -1,0 +1,149 @@
+@import "../../Global.scss";
+
+.scamperTask {
+    padding: $main_padding;
+    margin-left: $main_margin;
+
+
+    .task-wrapper {
+        display: flex;
+        width: 100vw;
+        height: 95vh;
+        
+
+
+        .eachColumn {
+            display: flex;
+            gap: 1rem;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+
+
+            .letter {
+                font-size: 5rem;
+                padding: 1rem;
+                border-radius: 50%;
+            }
+
+            .word {
+                padding: 2rem;
+                border-radius: 15px;
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: white;
+            }
+
+            .vertical-div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+                padding: 1.5rem;
+                background-color: $main_y;
+                border-radius: 20px;
+
+                height: 100%;
+                width: 90%;
+
+                span {
+                    color: white;
+                    font-weight: 300;
+                    font-size: .8rem;
+                }
+
+                textarea {
+                    border: none;
+                    padding: .5rem;
+                    border-radius: 15px;
+                    height: 100%;
+                }
+            }
+
+            &:nth-child(1) {
+                .letter{
+                    border: solid 1px red;
+                }
+                .word {
+                    background-color: red;
+                }
+                .vertical-div {
+                    background-color: red;
+                }
+            }
+
+            &:nth-child(2) {
+                .letter{
+                    border: solid 1px orange;
+                }
+                .word {
+                    background-color: orange;
+                }
+                .vertical-div {
+                    background-color: orange;
+                }
+            }
+
+            &:nth-child(3) {
+                .letter{
+                    border: solid 1px rgb(224, 224, 33);
+                }
+                .word {
+                    background-color: rgb(224, 224, 33);
+                }
+                .vertical-div {
+                    background-color: rgb(224, 224, 33);
+                }
+            }
+            &:nth-child(4) {
+                .letter{
+                    border: solid 1px green;
+                }
+                .word {
+                    background-color: green;
+                }
+                .vertical-div {
+                    background-color: green;
+                }
+            }
+
+            &:nth-child(5) {
+                .letter{
+                    border: solid 1px teal;
+                }
+                .word {
+                    background-color: teal;
+                }
+                .vertical-div {
+                    background-color: teal;
+                }
+            }
+            &:nth-child(6) {
+                .letter{
+                    border: solid 1px $main_y;
+                }
+                .word {
+                    background-color: $main_y;
+                }
+                .vertical-div {
+                    background-color: $main_y;
+                }
+            }
+
+            &:nth-child(7) {
+                .letter{
+                    border: solid 1px purple;
+                }
+                .word {
+                    background-color: purple;
+                }
+                .vertical-div {
+                    background-color: purple;
+                }
+            }
+        }
+
+
+    }
+
+}

@@ -6,6 +6,8 @@
 
     display: flex;
     flex-direction: column;
+    align-items: center;
+
     gap: 1rem;
 
     .title {
@@ -17,13 +19,16 @@
 
         h1 {
             font-size: 3rem;
+
         }
 
         span {
-            font-size: 1rem;
+            font-size: 1.5rem;
+            line-height: 2rem;
+            font-weight: 300;
 
             h1 {
-                font-size: 1.25rem;
+                font-size: 1.5rem;
                 color: $main_y;
                 display: inline;
             }
@@ -33,37 +38,80 @@
 
     .table-wrapper {
         display: flex;
-        height: 100%;
-        height: 80vh;
+        flex-direction: column;
+        height: 70vh;
 
-        .eachTable {
-            border: solid black 1px;
-            width: 100%;
+        .titleInTable {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+            gap: .5rem;
+            height: 100%;
+            position: relative;
 
-            .titleInTable {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+                color: gray;
+                
+            }
+
+            textarea {
+                width: 100%;
+                height: 100%;
+                border: none;
+                padding: 1.5rem;
+
+            }
+
+            .number {
+                position: absolute;
+                bottom: 0;
+                right: 70%;
                 padding: 1rem;
-                gap: .5rem;
-
-                h2 {
-                    font-size: 1.5rem;
-                }
-
-                p {
-                    font-size: 1rem;
-                    color: gray;
-                }
-
-                textarea{
-                    
-                }
+                font-size: 5rem;
+                color: gray;
+                opacity: 35%;
             }
         }
 
+
+        .vertical {
+            display: flex;
+            height: 100%;
+
+            .eachTable {
+                border: solid black 1px;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .horizantal {
+            border: solid black 1px;
+            height: 20vh;
+        }
     }
 
+    button {
+        transition: all 1s ease;
+        padding: 1rem;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 10px;
+        background-color: $main_b;
+        border: 2px solid black;
+        color: $main_w;
+        width: 30%;
 
 
+        &:hover {
+            background-color: $main_y;
+            color: $main_b;
+        }
+    }
 }
