@@ -19,3 +19,26 @@ export const m7_video = {
     url: 'https://www.youtube.com/embed/-OMJINQIZzA'
 }
 
+export const m8_video1 = {
+    headerText: "Let's watch the following video:",
+    url: 'https://www.youtube.com/embed/2PzT0aAi9Lw'
+}
+
+export const m8_video2 = {
+    headerText: "The following video explains how to choose the right tools to create your prototype using UX/UI:",
+    url: 'https://www.youtube.com/embed/jz12y0Oz8YM'
+}
+
+export const m8_video3 = {
+    headerText: "This is a livestream showing an example of prototyping on SwfitUI:",
+    url: 'https://www.youtube.com/embed/mzJsd_e1JP4'
+}
+
+
+export const m8_video4 = {
+    headerText: "Let's watch a video to understand more how to create a prototype with Framer: ",
+    url: 'https://www.youtube.com/embed/k7gwtxeeOQM'
+}
+
+
+

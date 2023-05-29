@@ -48,3 +48,9 @@ export const info_m7 = {
     Summary: 'In this module, we dive into the exciting phase of ideation ! where you generate a wide range of creative ideas and potential solutions to address the problem or challenge at hand. Ideation is a critical step in the design thinking process as it allows us to explore different perspectives, break free from constraints, and unlock innovative possibilities.',
     Image: '../../images/m7/m7.jpg',
 }
+
+export const info_m8 = {
+    Title: 'Prototype 1',
+    Summary: 'Prototyping brings ideas to life, reduces risks, and gathers user feedback for improvement.It makes ideas tangible, addresses issues early on, and ensures the final product meets market demands.Prototypes enable data collection and iterative improvement.',
+    Image: '../../images/m8/m8.jpg',
+}

@@ -10,6 +10,8 @@ import { DivergentThinking } from './DivergentThinking';
 import { ConvergentThinking } from './ConvergentThinking';
 import { ImageWithHeader } from '../../components/ImageWithHeader';
 import { TimerTask } from './TimerTask';
+import { review_m7 } from '../../Information/ReviewInfo';
+import { Review } from '../../components/Review';
 
 export const M7 = () => {
     const [start, SetStart] = useState(true)
@@ -20,6 +22,7 @@ export const M7 = () => {
     const [convergentThinking, SetConvergentThinking] = useState(false)
     const [image, SetImage] = useState(false)
     const [timerTask, SetTimerTask] = useState(false)
+    const [review, SetReview] = useState(false)
 
     if (start) {
         return (
@@ -93,7 +96,16 @@ export const M7 = () => {
         return (
             <>
                 <TimerTask />
+                <BsArrowRight onClick={() => { SetReview(true); SetTimerTask(false); }} className='next' />
                 <BsArrowLeft onClick={() => { SetImage(true); SetTimerTask(false); }} className='back' />
+            </>
+        )
+    }
+    else if (review) {
+        return (
+            <>
+                <Review Description={review_m7.Description} Modules={review_m7.Modules} NextModule={review_m7.NextModule} />
+                <BsArrowLeft onClick={() => { SetTimerTask(true) }} className='back' />
             </>
         )
     }

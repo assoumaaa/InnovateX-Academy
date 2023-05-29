@@ -17,6 +17,7 @@ import { M4 } from '../modules/M4/M4';
 import { M5 } from '../modules/M5/M5';
 import { M6 } from '../modules/M6/M6';
 import { M7 } from '../modules/M7/M7';
+import { M8 } from '../modules/M8/M8';
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
               <Route path="m5" element={<M5 />} />
               <Route path="m6" element={<M6 />} />
               <Route path="m7" element={<M7 />} />
+              <Route path="m8" element={<M8 />} />
             </Route>
 
           </Routes>

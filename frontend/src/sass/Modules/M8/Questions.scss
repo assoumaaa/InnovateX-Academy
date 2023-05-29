@@ -1,0 +1,31 @@
+@import "../../Global.scss";
+
+.question {
+    padding: $main_padding;
+    margin-left: $main_margin;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    gap: 2rem;
+
+    h1{
+        font-size: 2rem;
+    }
+
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        li {
+            font-size: 2rem;
+            list-style-type: circle;
+            font-weight: 300;
+        }
+    }
+}
