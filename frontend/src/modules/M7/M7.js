@@ -6,12 +6,20 @@ import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 import { Video } from '../../components/Video';
 import { m7_video } from '../../Information/VideoInfo';
 import { ScamperTask } from './ScamperTask';
+import { DivergentThinking } from './DivergentThinking';
+import { ConvergentThinking } from './ConvergentThinking';
+import { ImageWithHeader } from '../../components/ImageWithHeader';
+import { TimerTask } from './TimerTask';
 
 export const M7 = () => {
-    const [start, SetStart] = useState(false)
+    const [start, SetStart] = useState(true)
     const [scamperDef, SetScamperDef] = useState(false)
     const [scamperVideo, SetScamperVideo] = useState(false)
-    const [scamperTask, SetScamperTask] = useState(true)
+    const [scamperTask, SetScamperTask] = useState(false)
+    const [divergentThinking, SetDivergentThinking] = useState(false)
+    const [convergentThinking, SetConvergentThinking] = useState(false)
+    const [image, SetImage] = useState(false)
+    const [timerTask, SetTimerTask] = useState(false)
 
     if (start) {
         return (
@@ -49,8 +57,46 @@ export const M7 = () => {
         return (
             <>
                 <ScamperTask />
-                <BsArrowLeft onClick={() => { SetScamperDef(true); SetScamperVideo(false); }} className='back' />
+                <BsArrowRight onClick={() => { SetDivergentThinking(true); SetScamperTask(false); }} className='next' />
+                <BsArrowLeft onClick={() => { SetScamperVideo(true); SetScamperTask(false); }} className='back' />
+            </>
+        )
+    }
+    else if (divergentThinking) {
+        return (
+            <>
+                <DivergentThinking />
+                <BsArrowRight onClick={() => { SetConvergentThinking(true); SetDivergentThinking(false); }} className='next' />
+                <BsArrowLeft onClick={() => { SetScamperTask(true); SetDivergentThinking(false); }} className='back' />
+            </>
+        )
+    }
+    else if (convergentThinking) {
+        return (
+            <>
+                <ConvergentThinking />
+                <BsArrowRight onClick={() => { SetImage(true); SetConvergentThinking(false); }} className='next' />
+                <BsArrowLeft onClick={() => { SetDivergentThinking(true); SetConvergentThinking(false); }} className='back' />
+            </>
+        )
+    }
+    else if (image) {
+        return (
+            <>
+                <ImageWithHeader Title={'Convergent and Divergent!'} Image={'../../images/m7/image.png'} />
+                <BsArrowRight onClick={() => { SetTimerTask(true); SetImage(false); }} className='next' />
+                <BsArrowLeft onClick={() => { SetConvergentThinking(true); SetImage(false); }} className='back' />
+            </>
+        )
+    }
+    else if (timerTask) {
+        return (
+            <>
+                <TimerTask />
+                <BsArrowLeft onClick={() => { SetImage(true); SetTimerTask(false); }} className='back' />
             </>
         )
     }
 }
+
+

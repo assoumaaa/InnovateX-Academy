@@ -1,0 +1,49 @@
+@import "../../Global.scss";
+
+
+.timerTask {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    height: 100vh;
+    padding: $main_padding;
+    margin-left: $main_margin;
+
+
+    .countdown {
+        font-size: 5rem;
+    }
+
+    span {
+        gap: 1rem;
+        font-size: 2rem;
+        line-height: 3rem;
+        font-weight: 300;
+
+
+        h1 {
+            font-size: 2rem;
+            color: $main_y;
+            display: inline;
+        }
+    }
+
+    button {
+        transition: all 1s ease;
+        padding: 1rem;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 10px;
+        background-color: $main_b;
+        border: 2px solid black;
+        color: $main_w;
+        width: 30%;
+
+
+        &:hover {
+            background-color: $main_y;
+            color: $main_b;
+        }
+    }
+}

@@ -15,7 +15,7 @@ export const m5_video = {
 }
 
 export const m7_video = {
-    headerText: "'Follow this video's example on using SCAMPER in order to be able to complete the next task :",
+    headerText: "Follow this video's example on using SCAMPER in order to be able to complete the next task :",
     url: 'https://www.youtube.com/embed/-OMJINQIZzA'
 }
 
