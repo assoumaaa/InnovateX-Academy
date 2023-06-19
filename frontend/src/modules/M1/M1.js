@@ -15,102 +15,111 @@ import { review_m1 } from '../../Information/ReviewInfo'
 
 
 export const M1 = () => {
+  const [step, setStep] = useState('start');
 
-  const [start, SetStart] = useState(true)
-  const [img, SetImage] = useState(false)
-  const [sixThinkingHats, SetSixThinkingHats] = useState(false)
-  const [sixThinkingHatsTask, SetSixThinkingHatsTask] = useState(false)
-  const [mindMapping, SetMindMapping] = useState(false)
-  const [mindMappingQuizStart, SetMindMappingQuizStart] = useState(false)
-  const [moduleOneQuiz, SetModuleOneQuiz] = useState(false)
-  const [brainStorming, SetBrainStorming] = useState(false)
-  const [review, SetReview] = useState(false)
+  const transitions = {
+    start: () => setStep('img'),
+    img: () => setStep('sixThinkingHats'),
+    sixThinkingHats: () => setStep('sixThinkingHatsTask'),
+    sixThinkingHatsTask: () => setStep('mindMapping'),
+    mindMapping: () => setStep('mindMappingQuizStart'),
+    mindMappingQuizStart: () => setStep('moduleOneQuiz'),
+    moduleOneQuiz: () => setStep('brainStorming'),
+    brainStorming: () => setStep('review'),
+    review: () => setStep('start')
+  };
 
+  const goBack = {
+    img: () => setStep('start'),
+    sixThinkingHats: () => setStep('img'),
+    sixThinkingHatsTask: () => setStep('sixThinkingHats'),
+    mindMapping: () => setStep('sixThinkingHatsTask'),
+    mindMappingQuizStart: () => setStep('mindMapping'),
+    moduleOneQuiz: () => setStep('mindMappingQuizStart'),
+    brainStorming: () => setStep('moduleOneQuiz'),
+    review: () => setStep('brainStorming')
+  };
 
-
-
-
-  if (start) {
-    return (
-      <>
-
+  switch (step) {
+    case 'start':
+      return (
         <Start
           Title={info_m1.Title}
           Summary={info_m1.Summary}
           Image={info_m1.Image}
-          SetAsTrue={SetImage}
-          SetAsFalse={SetStart} />
-      </>
-    )
-  }
-
-  else if (img) {
-    return (
-      <>
-        <ImageWithHeader Title={'Quick Insight!'} Image={'../../images/m1/mindmapping.png'} />
-        <BsArrowRight onClick={() => { SetSixThinkingHats(true); SetImage(false); }} className='next' />
-        <BsArrowLeft onClick={() => { SetStart(true); SetImage(false); }} className='back' />
-      </>
-    )
-  }
-  else if (sixThinkingHats) {
-    return (
-      <>
-        <SixThinkingHats />
-        <BsArrowRight onClick={() => { SetSixThinkingHats(false); SetSixThinkingHatsTask(true); }} className='next' />
-        <BsArrowLeft onClick={() => { SetImage(true); }} className='back' />
-      </>
-    )
-  }
-  else if (sixThinkingHatsTask) {
-    return (
-      <>
-        <SixThinkingHatsTask />
-        <BsArrowRight onClick={() => { SetSixThinkingHatsTask(false); SetMindMapping(true); }} className='next' />
-        <BsArrowLeft onClick={() => { SetSixThinkingHats(true) }} className='back' />
-      </>
-    )
-  }
-  else if (mindMapping) {
-    return (
-      <>
-        <MindMapping />
-        <BsArrowRight onClick={() => { SetMindMapping(false); SetMindMappingQuizStart(true); }} className='next' />
-        <BsArrowLeft onClick={() => { SetSixThinkingHatsTask(true) }} className='back' />
-      </>
-    )
-  }
-  else if (mindMappingQuizStart) {
-    return (
-      <>
-        <MindMappingQuiz SetModuleOneQuiz={SetModuleOneQuiz} SetMindMappingQuizStart={SetMindMappingQuizStart} />
-        <BsArrowLeft onClick={() => { SetMindMapping(true) }} className='back' />
-      </>
-    )
-  }
-  else if (moduleOneQuiz) {
-    return (
-      <>
-        <ModuleOneQuiz SetBrainStorming={SetBrainStorming} SetModuleOneQuiz={SetModuleOneQuiz} />
-        <BsArrowLeft onClick={() => { SetMindMappingQuizStart(true) }} className='back' />
-      </>
-    )
-  }
-  else if (brainStorming) {
-    return (
-      <>
-        <BrainStorming />
-        <BsArrowRight onClick={() => { SetBrainStorming(false); SetReview(true); }} className='next' />
-        <BsArrowLeft onClick={() => { SetModuleOneQuiz(true) }} className='back' />
-      </>
-    )
-  }
-  else if (review) {
-    return (
-      <>
-        <Review Description={review_m1.Description} Modules={review_m1.Modules} NextModule={review_m1.NextModule} />
-        <BsArrowLeft onClick={() => { SetBrainStorming(true) }} className='back' />
-      </>
-    )
+          SetAsTrue={transitions.start}
+        />
+      );
+    case 'img':
+      return (
+        <>
+          <ImageWithHeader Title={'Quick Insight!'} Image={'../../images/m1/mindmapping.png'} />
+          <BsArrowRight onClick={transitions.img} className='next' />
+          <BsArrowLeft onClick={goBack.img} className='back' />
+        </>
+      );
+    case 'sixThinkingHats':
+      return (
+        <>
+          <SixThinkingHats />
+          <BsArrowRight onClick={transitions.sixThinkingHats} className='next' />
+          <BsArrowLeft onClick={goBack.sixThinkingHats} className='back' />
+        </>
+      );
+    case 'sixThinkingHatsTask':
+      return (
+        <>
+          <SixThinkingHatsTask />
+          <BsArrowRight onClick={transitions.sixThinkingHatsTask} className='next' />
+          <BsArrowLeft onClick={goBack.sixThinkingHatsTask} className='back' />
+        </>
+      );
+    case 'mindMapping':
+      return (
+        <>
+          <MindMapping />
+          <BsArrowRight onClick={transitions.mindMapping} className='next' />
+          <BsArrowLeft onClick={goBack.mindMapping} className='back' />
+        </>
+      );
+    case 'mindMappingQuizStart':
+      return (
+        <>
+          <MindMappingQuiz
+            SetModuleOneQuiz={transitions.mindMappingQuizStart}
+          />
+          <BsArrowLeft onClick={goBack.mindMappingQuizStart} className='back' />
+        </>
+      );
+    case 'moduleOneQuiz':
+      return (
+        <>
+          <ModuleOneQuiz
+            SetBrainStorming={transitions.moduleOneQuiz}
+          />
+          <BsArrowLeft onClick={goBack.moduleOneQuiz} className='back' />
+        </>
+      );
+    case 'brainStorming':
+      return (
+        <>
+          <BrainStorming />
+          <BsArrowRight onClick={transitions.brainStorming} className='next' />
+          <BsArrowLeft onClick={goBack.brainStorming} className='back' />
+        </>
+      );
+    case 'review':
+      return (
+        <>
+          <Review
+            Description={review_m1.Description}
+            Modules={review_m1.Modules}
+            NextModule={review_m1.NextModule}
+          />
+          <BsArrowLeft onClick={goBack.review} className='back' />
+        </>
+      );
+    default:
+      return <div>Invalid step</div>;
   }
 }

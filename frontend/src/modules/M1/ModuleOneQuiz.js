@@ -5,9 +5,7 @@ import { quiz_m1 } from '../../quizes/Quizes'
 
 
 
-
-
-export const ModuleOneQuiz = ({ SetBrainStorming, SetModuleOneQuiz }) => {
+export const ModuleOneQuiz = ({ SetBrainStorming }) => {
     const [activeQuestion, SetActiveQuestion] = useState(0)
     const [selectedAnswer, SetSelectedAnswer] = useState('')
     const [showResult, SetShowResult] = useState(false)
@@ -40,7 +38,6 @@ export const ModuleOneQuiz = ({ SetBrainStorming, SetModuleOneQuiz }) => {
                 SetShowResult(false)
                 SetAllCorrect(true)
                 SetBrainStorming(true)
-                SetModuleOneQuiz(false)
             } else {
                 SetActiveQuestion(0)
                 SetShowResult(true)

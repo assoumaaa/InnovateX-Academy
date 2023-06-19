@@ -8,43 +8,51 @@ import { review_m2 } from '../../Information/ReviewInfo';
 import { Review } from '../../components/Review';
 
 
-
 export const M2 = () => {
 
-    const [start, SetStart] = useState(true)
-    const [video, SetVideo] = useState(false)
-    const [review, SetReview] = useState(false)
+    const [step, setStep] = useState('start');
 
+    const transitions = {
+        start: () => setStep('video'),
+        video: () => setStep('review'),
+    };
 
-    if (start) {
-        return (
-            <>
-                <Start
-                    Title={info_m2.Title}
-                    Summary={info_m2.Summary}
-                    Image={info_m2.Image}
-                    SetAsTrue={SetVideo}
-                    SetAsFalse={SetStart} />
-            </>
-        )
-    }
+    const goBack = {
+        video: () => setStep('start'),
+        review: () => setStep('video')
+    };
 
-    else if (video) {
-        return (
-            <>
-                <Video headerText={m2_video.headerText} url={m2_video.url} />
-                <BsArrowRight onClick={() => { SetReview(true); SetVideo(false); }} className='next' />
-                <BsArrowLeft onClick={() => { SetStart(true); SetVideo(false); }} className='back' />
-            </>
-        )
-    }
+    switch (step) {
+        case 'start':
+            return (
+                <>
+                    <Start
+                        Title={info_m2.Title}
+                        Summary={info_m2.Summary}
+                        Image={info_m2.Image}
+                        SetAsTrue={transitions.start}
+                    />
+                </>
+            );
 
-    else if (review) {
-        return (
-            <>
-                <Review Description={review_m2.Description} Modules={review_m2.Modules} NextModule={review_m2.NextModule} />
-                <BsArrowLeft onClick={() => { SetVideo(true) }} className='back' />
-            </>
-        )
+        case 'video':
+            return (
+                <>
+                    <Video headerText={m2_video.headerText} url={m2_video.url} />
+                    <BsArrowRight onClick={transitions.video} className='next' />
+                    <BsArrowLeft onClick={goBack.video} className='back' />
+                </>
+            );
+
+        case 'review':
+            return (
+                <>
+                    <Review Description={review_m2.Description} Modules={review_m2.Modules} NextModule={review_m2.NextModule} />
+                    <BsArrowLeft onClick={goBack.review} className='back' />
+                </>
+            );
+
+        default:
+            return <div>Invalid step</div>;
     }
 }

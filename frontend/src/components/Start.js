@@ -2,7 +2,7 @@ import React from 'react'
 import '../sass/Start.scss'
 
 
-export const Start = ({ Title, Summary, Image, SetAsTrue, SetAsFalse }) => {
+export const Start = ({ Title, Summary, Image, SetAsTrue }) => {
 
 
     return (
@@ -14,7 +14,6 @@ export const Start = ({ Title, Summary, Image, SetAsTrue, SetAsFalse }) => {
                         <span> {Summary}</span>
                         <button onClick={() => {
                             SetAsTrue(true);
-                            SetAsFalse(false);
                         }}> Start </button>
                     </div>
                 </div>

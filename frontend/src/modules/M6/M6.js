@@ -8,64 +8,73 @@ import { SuccessTool } from './SuccessTool';
 import { review_m6 } from '../../Information/ReviewInfo';
 import { Review } from '../../components/Review';
 
-
 export const M6 = () => {
 
-    const [start, SetStart] = useState(true)
-    const [def, SetDef] = useState(false)
-    const [howMightWe, SetHowMightWe] = useState(false)
-    const [successTool, SetSuccessTool] = useState(false)
-    const [review, SetReview] = useState(false)
+    const [step, setStep] = useState('start');
 
-    if (start) {
-        return (
-            <>
-                <Start
-                    Title={info_m6.Title}
-                    Summary={info_m6.Summary}
-                    Image={info_m6.Image}
-                    SetAsTrue={SetDef}
-                    SetAsFalse={SetStart} />
-            </>
-        )
-    }
+    const transitions = {
+        start: () => setStep('def'),
+        def: () => setStep('howMightWe'),
+        howMightWe: () => setStep('successTool'),
+        successTool: () => setStep('review'),
+        review: () => setStep('start')
+    };
 
-    else if (def) {
-        return (
-            <>
-                <POV />
-                <BsArrowRight onClick={() => { SetHowMightWe(true); SetDef(false); }} className='next' />
-                <BsArrowLeft onClick={() => { SetStart(true); SetDef(false); }} className='back' />
-            </>
-        )
-    }
+    const goBack = {
+        def: () => setStep('start'),
+        howMightWe: () => setStep('def'),
+        successTool: () => setStep('howMightWe'),
+        review: () => setStep('successTool')
+    };
 
-    else if (howMightWe) {
-        return (
-            <>
-                <HMW />
-                <BsArrowRight onClick={() => { SetSuccessTool(true); SetHowMightWe(false); }} className='next' />
-                <BsArrowLeft onClick={() => { SetDef(true); SetHowMightWe(false); }} className='back' />
-            </>
-        )
-    }
+    switch (step) {
+        case 'start':
+            return (
+                <>
+                    <Start
+                        Title={info_m6.Title}
+                        Summary={info_m6.Summary}
+                        Image={info_m6.Image}
+                        SetAsTrue={transitions.start}
+                    />
+                </>
+            );
 
-    else if (successTool) {
-        return (
-            <>
-                <SuccessTool />
-                <BsArrowRight onClick={() => { SetReview(true); SetSuccessTool(false); }} className='next' />
-                <BsArrowLeft onClick={() => { SetHowMightWe(true); SetSuccessTool(false); }} className='back' />
-            </>
-        )
-    }
+        case 'def':
+            return (
+                <>
+                    <POV />
+                    <BsArrowRight onClick={transitions.def} className='next' />
+                    <BsArrowLeft onClick={goBack.def} className='back' />
+                </>
+            );
 
-    else if (review) {
-        return (
-            <>
-                <Review Description={review_m6.Description} Modules={review_m6.Modules} NextModule={review_m6.NextModule} />
+        case 'howMightWe':
+            return (
+                <>
+                    <HMW />
+                    <BsArrowRight onClick={transitions.howMightWe} className='next' />
+                    <BsArrowLeft onClick={goBack.howMightWe} className='back' />
+                </>
+            );
 
-            </>
-        )
+        case 'successTool':
+            return (
+                <>
+                    <SuccessTool />
+                    <BsArrowRight onClick={transitions.successTool} className='next' />
+                    <BsArrowLeft onClick={goBack.successTool} className='back' />
+                </>
+            );
+
+        case 'review':
+            return (
+                <>
+                    <Review Description={review_m6.Description} Modules={review_m6.Modules} NextModule={review_m6.NextModule} />
+                </>
+            );
+
+        default:
+            return <div>Invalid step</div>;
     }
 }

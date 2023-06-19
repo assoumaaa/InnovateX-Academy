@@ -9,100 +9,107 @@ import { Video } from '../../components/Video';
 import { m3_video } from '../../Information/VideoInfo';
 import { StartingEmpathyMap } from './StartingEmpathyMap';
 import { EmpathyMapTask } from './EmpathyMapTask';
-
 import { review_m3 } from '../../Information/ReviewInfo';
 import { Review } from '../../components/Review';
 
 export const M3 = () => {
 
-    const [start, SetStart] = useState(true)
-    const [def, SetDef] = useState(false)
-    const [video, SetVideo] = useState(false)
-    const [empathyMap, SetEmpathyMap] = useState(false)
-    const [empathyMapImage, SetEmpathyMapImage] = useState(false)
-    const [startingEmpathyMap, SetStartingEmpathyMap] = useState(false)
-    const [empathyMapTask, SetEmpathyMapTask] = useState(false)
-    const [review, SetReview] = useState(false)
+    const [step, setStep] = useState('start');
 
+    const transitions = {
+        start: () => setStep('def'),
+        def: () => setStep('video'),
+        video: () => setStep('empathyMap'),
+        empathyMap: () => setStep('empathyMapImage'),
+        empathyMapImage: () => setStep('startingEmpathyMap'),
+        startingEmpathyMap: () => setStep('empathyMapTask'),
+        empathyMapTask: () => setStep('review'),
+        review: () => setStep('start')
+    };
 
+    const goBack = {
+        def: () => setStep('start'),
+        video: () => setStep('def'),
+        empathyMap: () => setStep('video'),
+        empathyMapImage: () => setStep('empathyMap'),
+        startingEmpathyMap: () => setStep('empathyMapImage'),
+        empathyMapTask: () => setStep('startingEmpathyMap'),
+        review: () => setStep('empathyMapTask')
+    };
 
+    switch (step) {
+        case 'start':
+            return (
+                <>
+                    <Start
+                        Title={info_m3.Title}
+                        Summary={info_m3.Summary}
+                        Image={info_m3.Image}
+                        SetAsTrue={transitions.start}
+                    />
+                </>
+            );
 
-    if (start) {
-        return (
-            <>
-                <Start
-                    Title={info_m3.Title}
-                    Summary={info_m3.Summary}
-                    Image={info_m3.Image}
-                    SetAsTrue={SetDef}
-                    SetAsFalse={SetStart} />
-            </>
-        )
-    }
+        case 'def':
+            return (
+                <>
+                    <Persona />
+                    <BsArrowRight onClick={transitions.def} className='next' />
+                    <BsArrowLeft onClick={goBack.def} className='back' />
+                </>
+            );
 
-    else if (def) {
-        return (
-            <>
-                <Persona />
-                <BsArrowRight onClick={() => { SetVideo(true); SetDef(false); }} className='next' />
-                <BsArrowLeft onClick={() => { SetStart(true); SetDef(false); }} className='back' />
-            </>
-        )
-    }
+        case 'video':
+            return (
+                <>
+                    <Video headerText={m3_video.headerText} url={m3_video.url} />
+                    <BsArrowRight onClick={transitions.video} className='next' />
+                    <BsArrowLeft onClick={goBack.video} className='back' />
+                </>
+            );
 
-    else if (video) {
-        return (
-            <>
-                <Video headerText={m3_video.headerText} url={m3_video.url} />
-                <BsArrowRight onClick={() => { SetEmpathyMap(true); SetVideo(false); }} className='next' />
-                <BsArrowLeft onClick={() => { SetDef(true); SetVideo(false); }} className='back' />
-            </>
-        )
-    }
+        case 'empathyMap':
+            return (
+                <>
+                    <EmpathyMap />
+                    <BsArrowRight onClick={transitions.empathyMap} className='next' />
+                    <BsArrowLeft onClick={goBack.empathyMap} className='back' />
+                </>
+            );
 
-    else if (empathyMap) {
-        return (
-            <>
-                <EmpathyMap />
-                <BsArrowRight onClick={() => { SetEmpathyMapImage(true); SetEmpathyMap(false); }} className='next' />
-                <BsArrowLeft onClick={() => { SetVideo(true); SetEmpathyMap(false); }} className='back' />
-            </>
-        )
-    }
+        case 'empathyMapImage':
+            return (
+                <>
+                    <EmpathyMapImage />
+                    <BsArrowRight onClick={transitions.empathyMapImage} className='next' />
+                    <BsArrowLeft onClick={goBack.empathyMapImage} className='back' />
+                </>
+            );
 
-    else if (empathyMapImage) {
-        return (
-            <>
-                <EmpathyMapImage />
-                <BsArrowRight onClick={() => { SetStartingEmpathyMap(true); SetEmpathyMapImage(false); }} className='next' />
-                <BsArrowLeft onClick={() => { SetEmpathyMap(true); SetEmpathyMapImage(false); }} className='back' />
-            </>
-        )
-    }
+        case 'startingEmpathyMap':
+            return (
+                <>
+                    <StartingEmpathyMap SetEmpathyMapTask={transitions.startingEmpathyMap} />
+                    <BsArrowLeft onClick={goBack.startingEmpathyMap} className='back' />
+                </>
+            );
 
-    else if (startingEmpathyMap) {
-        return (
-            <>
-                <StartingEmpathyMap SetEmpathyMapTask={SetEmpathyMapTask} SetStartingEmpathyMap={SetStartingEmpathyMap} />
-                <BsArrowLeft onClick={() => { SetEmpathyMapImage(true); SetStartingEmpathyMap(false); }} className='back' />
-            </>
-        )
-    }
+        case 'empathyMapTask':
+            return (
+                <>
+                    <EmpathyMapTask SetReview={transitions.empathyMapTask} />
+                    <BsArrowLeft onClick={goBack.empathyMapTask} className='back' />
+                </>
+            );
 
-    else if (empathyMapTask) {
-        return (
-            <>
-                <EmpathyMapTask SetReview={SetReview} SetEmpathyMapTask={SetEmpathyMapTask} />
-                <BsArrowLeft onClick={() => { SetStartingEmpathyMap(true); SetEmpathyMapTask(false); }} className='back' />
-            </>
-        )
-    }
+        case 'review':
+            return (
+                <>
+                    <Review Description={review_m3.Description} Modules={review_m3.Modules} NextModule={review_m3.NextModule} />
+                </>
+            );
 
-    else if (review) {
-        return (
-            <>
-                <Review Description={review_m3.Description} Modules={review_m3.Modules} NextModule={review_m3.NextModule} />
-            </>
-        )
+        default:
+            return <div>Invalid step</div>;
     }
 }

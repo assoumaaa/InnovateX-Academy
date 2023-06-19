@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import '../../sass/Modules/M3/EmpathyMapTask.scss'
 import { empathy_map } from '../../Information/QuestionsInfo';
 
-export const EmpathyMapTask = ({ SetReview, SetEmpathyMapTask }) => {
+export const EmpathyMapTask = ({ SetReview }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const handleClick = () => {
@@ -11,7 +11,6 @@ export const EmpathyMapTask = ({ SetReview, SetEmpathyMapTask }) => {
         }
         else {
             SetReview(true);
-            SetEmpathyMapTask(false);
         }
     }
 
