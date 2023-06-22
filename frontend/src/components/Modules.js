@@ -4,7 +4,8 @@ import { BiLockAlt } from "react-icons/bi";
 import { getUserData } from '../hooks/hooks';
 import { Outlet } from 'react-router-dom';
 import '../sass/Modules.scss'
-import { Ring } from 'react-spinners-css'
+import ClipLoader from "react-spinners/ClipLoader";
+
 
 
 export const Modules = () => {
@@ -65,7 +66,7 @@ export const Modules = () => {
 
     ) : (
       <div className="loading">
-        <Ring color="#03b2fd" />
+        <ClipLoader color="#03b2fd" />
       </div>
     )
   )
