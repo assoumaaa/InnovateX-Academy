@@ -1,5 +1,5 @@
 
-![Screen Shot 2023-04-12 at 6 56 52 PM](https://user-images.githubusercontent.com/94231603/231514421-605d23d7-d94c-4596-ab0e-8fd795534651.png)
+![Screenshot 2023-06-22 at 1 35 46 PM](https://github.com/assoumaaa/innovateX-academy/assets/94231603/08fb139d-73ae-45d4-9e81-91a3d3166355)
 
 
 
